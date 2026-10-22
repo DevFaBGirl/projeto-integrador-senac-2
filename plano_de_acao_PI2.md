@@ -1,7 +1,7 @@
 # Plano de Ação - Projeto Integrador 2 (Etapa 2)
 
 **Projeto:** Sistema de Cadastro de Clientes/Encomendas - Confeitaria  
-**Equipe:** 
+**Equipe:** Aram Juliano Soares Zap, Camila Alves da Silva, Fabiana Balduína Freitas Silva, Jonatas Sales dos Santos Vieira, Vitória Rodrigue  
 **Prazo final:** 23/11/2026  
 **Data de criação:** 22/10/2026
 
@@ -30,15 +30,19 @@
 
 ## 2. Divisão de Papéis (RACI)
 
-| Integrante       | Perfil       | Papel                 | Responsabilidades (R)                                               | Apoia (A)          | Consultado (C) | Informado (I) |
-| ---------------- | ------------ | --------------------- | ------------------------------------------------------------------- | ------------------ | -------------- | ------------- |
-| **Integrante 1** | Sabe HTML/JS | **Tech Lead**         | Arquitetura JS, localStorage, integração, code review, Git, merge   | Cadastro, Listagem | QA, Docs       | Todos         |
-| **Integrante 2** | Sabe HTML/JS | **Frontend Cadastro** | `index.html`, `style.css`, validação formulário, `salvarCliente()`  | Tech Lead          | Listagem       | QA, Docs      |
-| **Integrante 3** | Sabe HTML/JS | **Frontend Listagem** | `listagem.html`, renderização tabela, `listarClientes()`, ordenação | Tech Lead          | Cadastro       | QA, Docs      |
-| **Integrante 4** | Não programa | **QA / Testes**       | Casos de teste, execução, bugs, prints, tabela de testes            | Tech Lead          | Devs           | Docs          |
-| **Integrante 5** | Não programa | **Documentação**      | Prints organizados, PDF apresentação, vídeo, boas práticas          | Tech Lead          | QA             | Devs          |
+### 2.1 Atribuição de Papéis (preencher com nomes da equipe)
+
+| Papel                 | Perfil       | Responsabilidades (R)                                               | Apoia (A)          | Consultado (C) | Informado (I) | Nome do Integrante |
+| --------------------- | ------------ | ------------------------------------------------------------------- | ------------------ | -------------- | ------------- | ------------------ |
+| **Tech Lead**         | Sabe HTML/JS | Arquitetura JS, localStorage, integração, code review, Git, merge   | Cadastro, Listagem | QA, Docs       | Todos         | Fabiana Balduína Freitas Silva |
+| **Frontend Cadastro** | Sabe HTML/JS | `index.html`, `style.css`, validação formulário, `salvarCliente()`  | Tech Lead          | Listagem       | QA, Docs      |                    |
+| **Frontend Listagem** | Sabe HTML/JS | `listagem.html`, renderização tabela, `listarClientes()`, ordenação | Tech Lead          | Cadastro       | QA, Docs      |                    |
+| **QA / Testes**       | Não programa | Casos de teste, execução, bugs, prints, tabela de testes            | Tech Lead          | Devs           | Docs          |                    |
+| **Documentação**      | Não programa | Prints organizados, PDF apresentação, vídeo, boas práticas          | Tech Lead          | QA             | Devs          |                    |
 
 **Legenda:** R = Responsável (executa), A = Apoia (ajuda), C = Consultado (opina), I = Informado (sabe do andamento)
+
+> **Definição de hoje (22/10):** Fabiana assume Tech Lead. Demais papéis a combinar com a equipe.
 
 ---
 
@@ -171,15 +175,15 @@ projeto-integrador-2/
 
 ## 5. Checklist de Entregáveis
 
-| #   | Entregável                                        | Responsável    | Prazo | Status |
-| --- | ------------------------------------------------- | -------------- | ----- | ------ |
-| 1   | Aplicação funcional (cadastro + listagem)         | Time Dev       | 05/11 | ⬜     |
-| 2   | Apresentação em PDF                               | Integrante 5   | 20/11 | ⬜     |
-| 3   | Prints das principais telas (mín. 6)              | Integrante 4/5 | 15/11 | ⬜     |
-| 4   | Tabela de testes realizados                       | Integrante 4   | 12/11 | ⬜     |
-| 5   | Boas práticas documentadas                        | Integrante 5   | 19/11 | ⬜     |
-| 6   | Vídeo demonstração (1-2 min)                      | Integrante 5   | 18/11 | ⬜     |
-| 7   | Funcionalidades opcionais (editar/excluir/filtro) | Time Dev       | 23/11 | ⬜     |
+| #   | Entregável                                        | Responsável (Papel) | Prazo | Status |
+| --- | ------------------------------------------------- | ------------------- | ----- | ------ |
+| 1   | Aplicação funcional (cadastro + listagem)         | Time Dev            | 05/11 | ⬜     |
+| 2   | Apresentação em PDF                               | Documentação        | 20/11 | ⬜     |
+| 3   | Prints das principais telas (mín. 6)              | QA / Testes + Documentação | 15/11 | ⬜     |
+| 4   | Tabela de testes realizados                       | QA / Testes         | 12/11 | ⬜     |
+| 5   | Boas práticas documentadas                        | Documentação        | 19/11 | ⬜     |
+| 6   | Vídeo demonstração (1-2 min)                      | Documentação        | 18/11 | ⬜     |
+| 7   | Funcionalidades opcionais (editar/excluir/filtro) | Time Dev            | 23/11 | ⬜     |
 
 ---
 
@@ -272,12 +276,14 @@ projeto-integrador-2/
 
 ## 10. Próximos Passos Imediatos (Esta Semana)
 
-- [ ] **Tech Lead:** Criar repositório GitHub, configurar branch protection, convidar equipe
-- [ ] **Tech Lead:** Criar `app.js` com `salvar()`, `listar()`, `gerarId()`, `toast()`
-- [ ] **Frontend Cadastro:** Estruturar `index.html` + `style.css` (mobile-first)
-- [ ] **Frontend Listagem:** Criar `listagem.html` com tabela semântica vazia
-- [ ] **QA:** Definir casos de teste na tabela (CT01-CT10)
-- [ ] **Docs:** Definir estrutura do PDF (slides: capa, problema, solução, telas, testes, boas práticas, equipe)
+| Ação                                                         | Responsável (Papel) | Status |
+| ------------------------------------------------------------ | ------------------- | ------ |
+| Criar repositório GitHub, configurar branch protection, convidar equipe | Fabiana (Tech Lead) | ✅     |
+| Criar `app.js` com `salvar()`, `listar()`, `gerarId()`, `toast()` | Fabiana (Tech Lead) |        |
+| Estruturar `index.html` + `style.css` (mobile-first)         | [Frontend Cadastro] |        |
+| Criar `listagem.html` com tabela semântica vazia             | [Frontend Listagem] |        |
+| Definir casos de teste na tabela (CT01-CT10)                 | [QA / Testes]       |        |
+| Definir estrutura do PDF (slides: capa, problema, solução, telas, testes, boas práticas, equipe) | [Documentação] |        |
 
 ---
 
@@ -294,13 +300,15 @@ projeto-integrador-2/
 
 ## 12. Contatos da Equipe
 
-| Nome           | Papel             | Contato (WhatsApp/Email) | Disponibilidade |
-| -------------- | ----------------- | ------------------------ | --------------- |
-| [Seu nome]     | Tech Lead         |                          |                 |
-| [Integrante 2] | Frontend Cadastro |                          |                 |
-| [Integrante 3] | Frontend Listagem |                          |                 |
-| [Integrante 4] | QA / Testes       |                          |                 |
-| [Integrante 5] | Documentação      |                          |                 |
+| Nome                                | Papel             | Contato (WhatsApp/Email) | Disponibilidade |
+| ----------------------------------- | ----------------- | ------------------------ | --------------- |
+| Fabiana Balduína Freitas Silva      | Tech Lead         |                          |                 |
+|                                     | Frontend Cadastro |                          |                 |
+|                                     | Frontend Listagem |                          |                 |
+|                                     | QA / Testes       |                          |                 |
+|                                     | Documentação      |                          |                 |
+
+> **Nomes da equipe para preencher:** Aram Juliano Soares Zap, Camila Alves da Silva, Jonatas Sales dos Santos Vieira, Vitória Rodrigue
 
 ---
 
