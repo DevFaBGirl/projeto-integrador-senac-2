@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Confeitaria Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Minha Confeitaria Online</h1>
+        <p>Bolos artesanais, doces e kits para festas feitos com carinho[cite: 5].</p>
+    </header>
+
+    <!-- Formulário de Cadastro / Edição -->
+    <section id="admin-section">
+        <h2>Gerenciamento de Produtos</h2>
+        <form id="produto-form">
+            <input type="hidden" id="produto-id">
+            <input type="text" id="nome" placeholder="Nome do Produto" required>
+            <input type="text" id="descricao" placeholder="Descrição" required>
+            <input type="number" id="preco" placeholder="Preço (R$)" step="0.01" required>
+            <button type="submit" id="salvar-btn">Cadastrar Produto</button>
+        </form>
+    </section>
+
+    <!-- Catálogo de Produtos -->
+    <section id="catalogo-section">
+        <h2>Catálogo de Produtos</h2>
+        <div id="produtos-container" class="grid-produtos"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
