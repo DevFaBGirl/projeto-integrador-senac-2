@@ -1,40 +1,47 @@
 # Escopo e Requisitos
 
-> Derivado de `docs/requests/Enunciado da 2º entrega do Projeto Integrador.pdf`, `docs/requests/PLANO_DE_ACAO_PI2.md` e `docs/requests/projeto-integrador_1_Senac.pdf`.
-> Escopo confirmado: a aplicação **inclui a landing page** (PI1) **e** o sistema de cadastro/listagem (PI2).
+> Atualizado em 09/11/2026. Derivado de `docs/requests/Enunciado da 2º entrega do Projeto Integrador.pdf`, `docs/requests/projeto-integrador_1_Senac.pdf`, `docs/requests/PLANO_DE_ACAO_PI2.md` e do código inicial em `site/`.
+> Escopo adotado: **landing page + catálogo de produtos gerenciável** (DEC4, a confirmar com a equipe). O cadastro de clientes/encomendas do plano de 22/10 virou funcionalidade futura.
+
+Situação: ✅ feito no código · 🟨 parcial · ⬜ a fazer. Análise detalhada em [04-estado-do-codigo.md](04-estado-do-codigo.md).
 
 ## 1. Requisitos funcionais
 
-### 1.1 Landing page (origem: proposta PI1)
+### 1.1 Vitrine pública — landing page (origem: proposta PI1)
 
-| ID | Requisito | Objetivo |
+| ID | Requisito | Objetivo | Situação |
+| --- | --- | --- | --- |
+| RL01 | **Apresentação da confeiteira:** nome, descrição, proposta de trabalho e principais diferenciais. | Visitante conhece rapidamente a/o profissional e o negócio. | 🟨 |
+| RL02 | **Catálogo de produtos:** nome, descrição, imagem e, quando aplicável, preço inicial. | Potencial cliente conhece as opções disponíveis. | 🟨 (sem imagem) |
+| RL03 | **Galeria de trabalhos:** imagens de trabalhos realizados. | Mostrar qualidade e variedade dos produtos. | ⬜ |
+| RL04 | **Informações para encomenda:** prazo mínimo, tipos de produtos disponíveis e como solicitar orçamento. | Reduzir dúvidas iniciais e facilitar a solicitação. | ⬜ |
+| RL05 | Página **responsiva** que facilite o contato com potenciais clientes. | Objetivo 2 da proposta PI1. | 🟨 (responsiva, sem contato) |
+
+### 1.2 Gerenciamento do catálogo (origem: enunciado PI2 + código inicial)
+
+#### Obrigatórios (mínimo viável do enunciado)
+
+| ID | Requisito | Origem | Situação |
+| --- | --- | --- | --- |
+| RF01 | Cadastrar produto por formulário: nome, descrição, preço e imagem. | Enunciado ("cadastro de informações") | 🟨 (sem imagem) |
+| RF02 | Listar os produtos cadastrados como catálogo, com estado vazio. | Enunciado ("listagem") | ✅ |
+| RF03 | Armazenar no `localStorage` (chave `produtos_confeitaria`). | Enunciado (sugestão) | ✅ |
+| RF04 | Validar campos obrigatórios, preço numérico positivo e limpar espaços (`trim`). | Boas práticas | 🟨 (só `required`) |
+| RF05 | Dar feedback visual de sucesso/erro e confirmar a exclusão. | UX | 🟨 (tem confirmação e estado vazio, sem toast) |
+
+#### Opcionais do enunciado
+
+| ID | Requisito | Situação |
 | --- | --- | --- |
-| RL01 | **Apresentação da confeiteira:** nome, descrição, proposta de trabalho e principais diferenciais. | Visitante conhece rapidamente a/o profissional e o negócio. |
-| RL02 | **Catálogo de produtos:** principais produtos com nome, descrição, imagem e, quando aplicável, preço inicial. | Potencial cliente conhece as opções disponíveis. |
-| RL03 | **Galeria de trabalhos:** imagens de trabalhos realizados. | Mostrar qualidade e variedade dos produtos. |
-| RL04 | **Informações para encomenda:** prazo mínimo, tipos de produtos disponíveis e informações para solicitar orçamento. | Reduzir dúvidas iniciais e facilitar a solicitação. |
-| RL05 | Página **responsiva** que facilite o contato com potenciais clientes. | Objetivo 2 da proposta PI1. |
+| RO01 | Editar produto. | ✅ |
+| RO02 | Excluir produto. | ✅ |
+| RO03 | Pesquisar/filtrar produtos por nome. | ⬜ |
 
-### 1.2 Cadastro e consulta (origem: enunciado e plano PI2)
-
-#### Obrigatórios (mínimo viável)
-
-| ID | Requisito | Origem |
-| --- | --- | --- |
-| RF01 | Cadastrar informações por formulário: Nome, Telefone, Email, Produto, Data de Entrega, Observações. | Enunciado ("cadastro de informações"); Plano §1.1 |
-| RF02 | Listar/consultar os registros cadastrados em tabela, ordenados por data (mais recente primeiro). | Enunciado ("listagem"); Plano §1.1 |
-| RF03 | Armazenar os dados no `localStorage` do navegador (chave `clientesConfeitaria`). | Enunciado (sugestão); Plano §1.1 |
-| RF04 | Validar campos obrigatórios e o formato de email, telefone e data. | Plano §1.1 |
-| RF05 | Dar feedback visual (sucesso/erro) e exibir estado vazio quando não houver registros. | Plano §7.4 |
-| RF06 | Permitir navegação entre as telas de cadastro e listagem. | Plano §3 (semana 2) |
-
-#### Opcionais (documentar como "funcionalidades futuras" se não implementadas)
+#### Funcionalidade futura (fora do escopo atual)
 
 | ID | Requisito |
 | --- | --- |
-| RO01 | Alterar registro. |
-| RO02 | Excluir registro. |
-| RO03 | Pesquisar/filtrar por nome, produto ou data. |
+| RX01 | Cadastro e listagem de clientes/encomendas (nome, telefone, email, produto, data de entrega, observações), como no plano de 22/10. |
 
 ## 2. Requisitos não funcionais
 
@@ -42,56 +49,62 @@
 | --- | --- | --- |
 | RNF01 | Tecnologias: HTML, CSS e JavaScript (sem banco de dados externo); Git/GitHub para controle de versão. | Enunciado; PI1 |
 | RNF02 | Interface simples, intuitiva e responsiva (mobile-first; mobile, tablet, desktop). | Enunciado; Plano §7.5 |
-| RNF03 | Acessibilidade básica: labels associados, contraste WCAG AA, navegação por teclado. | Plano §7.5 |
-| RNF04 | Separação de responsabilidades (HTML estrutura / CSS apresentação / JS comportamento) e modularização por arquivo. | Plano §7.1 |
-| RNF05 | Tratamento de erros em operações de `localStorage` (`try/catch`) e sanitização básica de entradas (trim, escape de HTML). | Plano §7.3 |
+| RNF03 | Acessibilidade básica: `<label>` associado a cada campo, contraste WCAG AA, navegação por teclado, `alt` nas imagens. | Plano §7.5 |
+| RNF04 | Separação de responsabilidades (HTML estrutura / CSS apresentação / JS comportamento), sem `onclick` embutido. | Plano §7.1 |
+| RNF05 | Tratamento de erros em operações de `localStorage` (`try/catch`) e sanitização de entradas. | Plano §7.3 |
 | RNF06 | Versionamento com Git/GitHub: commits semânticos em português, branches `feat/*`, PRs com revisão. | Plano §7.2 |
+| RNF07 | **Segurança:** nunca inserir texto digitado pelo usuário com `innerHTML` sem escapar (evitar XSS). | Boas práticas; achado em [04-estado-do-codigo.md](04-estado-do-codigo.md) |
 
-## 3. Modelo de dados (inicial)
+## 3. Modelo de dados
 
-Chave: `clientesConfeitaria` — valor: array de objetos.
+Chave: `produtos_confeitaria` — valor: array de objetos.
+
+**Formato atual no código** (sem `id`, preço como texto):
+
+```javascript
+[{ nome: "Bolo de chocolate", descricao: "Recheio de brigadeiro", preco: "85.00" }]
+```
+
+**Formato proposto** (a confirmar):
 
 | Campo | Tipo | Observação |
 | --- | --- | --- |
-| `id` | number | `Date.now()` como identificador único (com fallback). |
-| `nome` | string | Obrigatório. |
-| `telefone` | string | Formato brasileiro, ex.: `(11) 99999-9999`. |
-| `email` | string | Validação de formato. |
-| `produto` | string | Ex.: "Bolo 2kg - Chocolate". |
-| `dataEntrega` | string | `YYYY-MM-DD`; validação de data futura prevista no plano. |
-| `observacoes` | string | Opcional. |
-| `criadoEm` | string | ISO 8601. |
+| `id` | number | `Date.now()` com fallback. Substitui o índice do array como identificador. |
+| `nome` | string | Obrigatório, com `trim`. |
+| `descricao` | string | Obrigatório, com `trim`. |
+| `preco` | number | Maior que zero; exibido como `R$ 0,00`. |
+| `imagem` | string | Caminho relativo a um arquivo em `site/img/`. Evitar guardar imagem como `data:` no `localStorage`, que tem limite de cerca de 5 MB. |
+| `criadoEm` | string | ISO 8601 (opcional). |
 
-> Evolução prevista: schema versionado (`clientesConfeitaria_v1`).
+> Ao ler dados no formato atual, o código deve tolerá-los (gerar `id`, converter `preco`), para não perder o que já foi cadastrado.
 
-## 4. Estrutura técnica prevista
+## 4. Estrutura técnica
 
-> **Provisória.** A estrutura abaixo vem do plano PI2, que não previa a landing page. Como a landing page é a vitrine pública, é provável que ela passe a ser a página inicial e o formulário ganhe outro arquivo. A decisão está em aberto (ver pendência L7 em [03-pendencias-e-decisoes.md](03-pendencias-e-decisoes.md)).
+Estrutura atual, adotada provisoriamente (resolve a pendência L7):
 
 ```
-index.html      # Formulário de cadastro (no plano PI2; conflita com a landing page)
-listagem.html   # Tabela de registros
-style.css       # Estilos compartilhados (mobile-first)
-app.js          # Storage, utilitários, helpers compartilhados
-cadastro.js     # Lógica do cadastro
-listagem.js     # Lógica da listagem
-README.md       # Instruções de uso
-prints/         # Evidências visuais
+site/
+├── index.html    # Landing page + formulário e catálogo de produtos
+├── script.js     # Lógica do catálogo (CRUD em localStorage)
+├── style.css     # Estilos
+└── img/          # (a criar) imagens de produtos e galeria
 ```
 
-Fluxo: Formulário → validação (`cadastro.js`) → `salvarCliente()` (`app.js`) → `localStorage` → redireciona para `listagem.html` → `listarClientes()` → renderização da tabela.
+Fluxo atual: formulário → `submit` → grava em `produtos[]` → `localStorage.setItem("produtos_confeitaria")` → `renderizarProdutos()` → cartões no catálogo. Editar e excluir operam pelo índice do array.
+
+Evolução prevista, se o `script.js` crescer: separar utilitários (leitura/escrita seguras, `escapeHtml`, `toast`) em `app.js` e deixar a lógica do catálogo em arquivo próprio. O plano de 22/10 previa `index.html`, `listagem.html`, `app.js`, `cadastro.js` e `listagem.js` para o cadastro de clientes; essa estrutura não se aplica mais.
 
 ## 5. Entregáveis da etapa
 
 | # | Entregável | Fonte |
 | --- | --- | --- |
-| 1 | Aplicação funcional (landing page + cadastro + listagem) | Enunciado; PI1; confirmação da equipe |
+| 1 | Aplicação funcional (landing page + catálogo gerenciável) | Enunciado; PI1; DEC4 |
 | 2 | Apresentação em PDF | Enunciado |
 | 3 | Prints das principais telas (plano: mínimo de 6) | Enunciado; Plano §5 |
-| 4 | Tabela de testes realizados (plano: CT01–CT10) | Enunciado; Plano §6 |
+| 4 | Tabela de testes realizados (casos a reescrever para o catálogo e a landing page) | Enunciado; Plano §6 |
 | 5 | Descrição das boas práticas aplicadas | Enunciado |
-| 6 | Vídeo de demonstração de 1–2 min (sugerido, opcional) | Enunciado |
+| 6 | Vídeo de demonstração de 1–2 min (sugerido, opcional): cadastrar e editar um produto | Enunciado |
 
 ## 6. Papéis (resumo)
 
-Só o papel de **Tech Lead** está atribuído (Fabiana Balduína Freitas Silva). Frontend Cadastro, Frontend Listagem, QA/Testes e Documentação seguem sem responsável. Nenhum papel do plano cobre a landing page. O detalhamento está em `docs/requests/PLANO_DE_ACAO_PI2.md` §2; `RACI_EXPLICACAO.md` está marcado como desabilitado e não foi usado.
+Só o papel de **Tech Lead / coordenação técnica** está indicado no plano (Fabiana Balduína Freitas Silva). As demais funções seguem em aberto. A proposta de funções, RACI por entrega e combinados de trabalho está em [raci-e-combinados-de-trabalho.md](../planejamento/raci-e-combinados-de-trabalho.md).

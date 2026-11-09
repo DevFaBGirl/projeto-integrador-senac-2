@@ -1,55 +1,57 @@
 # Pendências, Divergências e Decisões
 
-> Registro do que a documentação de fundação **não** conseguiu fechar a partir das fontes. Nada abaixo foi decidido por inferência silenciosa.
+> Atualizado em 09/11/2026. Registro do que a documentação de fundação **não** conseguiu fechar a partir das fontes. Nada abaixo foi decidido por inferência silenciosa.
 
 ## 1. Divergências entre fontes
 
-| # | Divergência | Como foi tratado nesta fundação | Ação necessária |
+| # | Divergência | Como foi tratado | Ação necessária |
 | --- | --- | --- | --- |
-| D1 | ✅ **Resolvida.** A proposta PI1 descreve a landing page "Minha Confeitaria Online"; o plano e o enunciado PI2 descrevem um sistema de cadastro/listagem. | **Decisão da equipe: o escopo inclui a landing page e o sistema de cadastro/listagem.** A visão geral e os requisitos cobrem as duas partes. | Nenhuma. Os efeitos no plano estão em L7–L9. |
+| D1 | ✅ **Resolvida.** A proposta PI1 descreve a landing page "Minha Confeitaria Online"; o plano PI2 descreve um sistema de cadastro/listagem de clientes e encomendas. | **Decisão da equipe: o escopo inclui a landing page** (DEC3). | Nenhuma. |
 | D2 | Grafia do sobrenome da integrante: "Vitória Rodrigue" (plano) × "Vitória Rodrigues" (PI1). | Usada a grafia do PI1 ("Rodrigues"). | Confirmar a grafia correta. |
-| D3 | `RACI_EXPLICACAO.md` está comentado e marcado "desabilitado — não utilizar". | Não usado como fonte. | Nenhuma. |
+| D3 | `RACI_EXPLICACAO.md` tinha sido desabilitado por comentário; o comentário foi removido. | Evoluído em [raci-e-combinados-de-trabalho.md](../planejamento/raci-e-combinados-de-trabalho.md). | Nenhuma. |
+| D4 | 🆕 **O código inicial em `site/` cadastra produtos**, não clientes/encomendas como o plano de 22/10. O plano (`PLANO_DE_ACAO_PI2.md`, em `docs/requests/`) fica **desatualizado** em escopo, estrutura de arquivos, casos de teste CT01–CT10 e papéis "Frontend Cadastro/Listagem". | **DEC4:** o catálogo de produtos é o "cadastro de informações" do PI2 e substitui o cadastro de clientes (funcionalidade futura RX01). O plano original não foi alterado, por ser fonte. | Equipe confirmar a DEC4 (T01). Se preferir manter os dois cadastros, reverter RX01 para o escopo e acrescentar tarefas. |
 
 ## 2. Lacunas de informação
 
 | # | Lacuna | Impacto |
 | --- | --- | --- |
-| L1 | Responsáveis por Frontend Cadastro, Frontend Listagem, QA/Testes e Documentação não definidos. | Entregáveis sem dono. |
-| L2 | Status atual do desenvolvimento desconhecido. O plano previa "aplicação completa" até 05/11/2026 e a fundação foi feita em 06/11/2026; não há código no repositório. | Não se sabe se o cronograma está em dia. |
-| L3 | Regra exata de validação de telefone e de "data futura" (hoje, passado, hoje inclusive?). | Afeta casos de teste CT04/CT05. |
-| L4 | Campos obrigatórios vs. opcionais: só Nome está explícito (CT02); `observacoes` aparenta ser opcional. | Afeta RF04. |
+| L1 | Responsáveis por todas as funções, exceto a indicação da Fabiana na coordenação técnica, não definidos. | Entregáveis sem dono. |
+| L2 | ✅ **Parcialmente resolvida.** O código inicial existe em `site/` (07/11). Falta confirmar se há trabalho fora do repositório. | Reavaliar o status quando a equipe confirmar. |
+| L3 | Regras de validação do produto: tamanho máximo de nome/descrição, limite de preço, formato e tamanho da imagem. | Afeta RF04 e os casos de teste. |
+| L4 | Se a imagem do produto será um arquivo em `site/img/` ou outra forma (URL externa). | Afeta RL02, RL03 e o modelo de dados. |
 | L5 | Contatos e disponibilidade da equipe (plano §12 em branco). | Comunicação. |
 | L6 | Forma de publicação/acesso da aplicação (arquivo local, página estática, etc.). | Ver restrição abaixo. |
-| L7 | **Estrutura de arquivos.** O plano usa `index.html` para o formulário de cadastro, mas a landing page normalmente é a página inicial. | Reorganizar a estrutura técnica antes de implementar. |
-| L8 | **Relação entre as duas partes.** Não está definido se a landing page só divulga e leva ao formulário (por exemplo, como solicitação de orçamento) ou se o cadastro/listagem é uma área interna da confeiteira. | Muda a navegação, a persona de cada tela e quem vê a listagem. |
-| L9 | **Plano e cronograma sem landing page.** O plano PI2 (4 semanas) não tem tarefas, papéis, testes (CT01–CT10), prints nem roteiro de vídeo para a landing page. O PI1 previa 6 semanas. | Cronograma e entregáveis precisam ser revistos com o prazo de 23/11/2026. |
-| L10 | **Conteúdo da landing page.** Faltam textos, imagens, preços iniciais, contato, localização e horários da confeiteira (ou se serão fictícios). | Bloqueia a implementação de RL01–RL04. |
+| L7 | ✅ **Resolvida provisoriamente.** Estrutura adotada: `site/index.html`, `script.js`, `style.css`, com `site/img/` a criar. | Reavaliar se o `script.js` crescer. |
+| L8 | **Onde fica o gerenciamento do catálogo.** Hoje o formulário está visível a qualquer visitante (achado C07). Opções: seção separada, página separada ou aviso de que é uma demonstração sem login (o enunciado dispensa banco e autenticação). | Muda navegação e a experiência de quem visita. |
+| L9 | **Plano e cronograma.** O plano de 22/10 não cobre a landing page nem o catálogo. O cronograma novo está em [cronograma-e-tarefas.md](../planejamento/cronograma-e-tarefas.md), mas as datas de 06/11 a 08/11 já passaram sem confirmação. | Prazos revistos para 09/11 a 10/11 na fase de alinhamento. |
+| L10 | **Conteúdo da landing page.** Faltam textos, imagens, preços iniciais, contato, localização e horários da confeiteira (ou a decisão de usar conteúdo fictício). | Bloqueia RL01, RL03 e RL04. |
 
 ## 3. Restrições desta rodada
 
-- **Provedor de cloud não definido.** Hospedagem, deploy, CI/CD em nuvem e qualquer serviço gerenciado ficam para rodada posterior. A aplicação descrita funciona sem infraestrutura de servidor (localStorage). O GitHub aparece apenas como controle de versão, não como definição de hospedagem.
+- **Provedor de cloud não definido.** Hospedagem, deploy, CI/CD em nuvem e qualquer serviço gerenciado ficam para rodada posterior. A aplicação funciona sem infraestrutura de servidor (`localStorage`). O GitHub aparece apenas como controle de versão, não como definição de hospedagem.
 
-## 4. Decisões já tomadas (fornecidas na solicitação)
+## 4. Decisões já tomadas
 
-| # | Decisão |
-| --- | --- |
-| DEC1 | A rodada inicial produz documentação do projeto indicando **o que ele é e o que faz**. |
-| DEC2 | Nenhum provedor de cloud é definido nesta rodada. |
-| DEC3 | O escopo da aplicação inclui a **landing page** (PI1) e o **sistema de cadastro/listagem** (PI2). |
+| # | Decisão | Origem |
+| --- | --- | --- |
+| DEC1 | A rodada inicial produz documentação do projeto indicando **o que ele é e o que faz**. | Solicitação |
+| DEC2 | Nenhum provedor de cloud é definido nesta rodada. | Solicitação |
+| DEC3 | O escopo da aplicação inclui a **landing page** (PI1). | Equipe (resposta à pendência D1) |
+| DEC4 | 🆕 O **catálogo de produtos gerenciável** (cadastro, listagem, edição e exclusão) é o "cadastro de informações" da 2ª etapa e substitui o cadastro de clientes/encomendas, que vira funcionalidade futura. **A confirmar com a equipe.** | Atualização de 09/11/2026, a partir do código inicial |
 
-## 5. Decisões herdadas das fontes (a confirmar quando relevante)
+## 5. Decisões herdadas das fontes
 
 | # | Decisão | Fonte |
 | --- | --- | --- |
 | H1 | Stack HTML + CSS + JavaScript, sem framework nem banco externo. | Enunciado / Plano |
-| H2 | Persistência em `localStorage`, chave `clientesConfeitaria`. | Plano §4.2 |
-| H3 | Tech Lead: Fabiana Balduína Freitas Silva. | Plano §2 |
+| H2 | Persistência em `localStorage`. A chave agora é `produtos_confeitaria` (no plano era `clientesConfeitaria`). | Código |
+| H3 | Coordenação técnica (Tech Lead) indicada no plano: Fabiana Balduína Freitas Silva. A equipe pode confirmar ou trocar. | Plano §2 |
 | H4 | Prazo final 23/11/2026. | Plano |
 
 ## 6. Próximos passos sugeridos
 
-1. Definir a relação entre landing page e cadastro (L8) e a estrutura de arquivos (L7).
-2. Revisar o plano e o cronograma incluindo a landing page (L9) e atribuir papéis (L1).
-3. Reunir o conteúdo da landing page (L10).
-4. Confirmar o status atual (L2) e reajustar o cronograma se necessário.
+1. Equipe confirmar a DEC4 e decidir o L8 (onde fica o gerenciamento).
+2. Corrigir os achados C01 e C02 do código, que são rápidos e os mais visíveis ([04-estado-do-codigo.md](04-estado-do-codigo.md)).
+3. Atribuir os responsáveis (L1) e definir a imagem dos produtos (L4).
+4. Reunir o conteúdo da landing page (L10).
 5. Só então derivar SPECs/roadmap de funcionalidades a partir do escopo confirmado.

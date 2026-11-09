@@ -31,8 +31,8 @@ Cinco pessoas, seis funções. A **Facilitação** é acumulada por alguém com 
 | Sigla | Função | O que faz | Limite da função |
 | --- | --- | --- | --- |
 | **CT** | Coordenação técnica (no plano: Tech Lead) | Repositório, estrutura de arquivos, `app.js` e `style.css` base, revisão de PRs e integração. | Não distribui tarefas sozinha e não decide escopo sozinha. Não faz o trabalho dos outros para "ganhar tempo". |
-| **LP** | Landing page | HTML, CSS e conteúdo da landing page: apresentação, catálogo, galeria e informações de encomenda. | Alinha com CL a navegação e o estilo compartilhado. |
-| **CL** | Cadastro e listagem | Formulário, validações, armazenamento no `localStorage` e tabela de registros. | Segue as regras de validação definidas em grupo (T06). |
+| **LP** | Landing page | HTML, CSS e conteúdo da vitrine: apresentação, galeria, informações de encomenda e contato. | Alinha com CL a navegação e o estilo compartilhado. |
+| **CL** | Catálogo e gerenciamento | Formulário de produto, validações, armazenamento no `localStorage`, catálogo em cartões, edição e exclusão (área **CAT** do cronograma). | Segue as regras de validação definidas em grupo (T06). |
 | **QA** | Testes | Casos de teste, execução, registro e reteste de bugs. | Registra bugs sem culpar ninguém: passos, print e resultado esperado. |
 | **DOC** | Documentação | Prints, PDF, vídeo e texto de boas práticas. | Pede o material cedo, não na véspera. |
 | **FAC** | Facilitação | Mantém o quadro de tarefas atualizado, convoca as reuniões, registra as decisões e faz a cobrança gentil. | Não manda: lembra, pergunta e anota. |
@@ -48,8 +48,8 @@ Os IDs em parênteses são da lista de tarefas. Cada linha tem um único A.
 | Decisões de escopo, conteúdo e regras de validação (T01, T05, T06) | R | R | R | C | C | **A** |
 | Repositório, estrutura de arquivos e regras de PR (T02, T03) | **A/R** | C | C | I | I | I |
 | Base compartilhada: `app.js`, `style.css`, feedback visual (T08, T09, T22) | **A/R** | C | C | I | I | I |
-| Landing page: estrutura, seções e responsividade (T10–T14, T23) | C | **A/R** | I | C | C | I |
-| Cadastro e listagem: telas, validações e responsividade (T15–T18, T21, T24) | C | I | **A/R** | C | I | I |
+| Landing page: estrutura, seções e responsividade (T10, T11, T13, T14, T23) | C | **A/R** | I | C | C | I |
+| Catálogo e gerenciamento de produtos (T12, T15–T18, T21, T24, T39) | C | C | **A/R** | C | I | I |
 | Revisão de PRs e merge (T26) | **A/R** | R | R | I | I | I |
 | Integração e navegação entre telas (T20) | **A/R** | C | C | I | I | I |
 | Casos de teste, execução e reteste (T19, T27, T28, T30) | I | C | C | **A/R** | I | I |
