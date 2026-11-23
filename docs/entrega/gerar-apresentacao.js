@@ -46,6 +46,7 @@ const slidesTelas = [
   ["Telas: validação e feedback", [["05-erro-validacao", "Mensagens de erro junto aos campos"], ["06-cadastro-sucesso", "Aviso de sucesso ao cadastrar"]]],
   ["Telas: edição e galeria", [["07-edicao", "Edição de um produto"], ["09-galeria", "Galeria de trabalhos"]]],
   ["Telas: cadastro e encomenda", [["04-formulario-cadastro", "Formulário de cadastro de produto"], ["10-encomenda", "Como encomendar e pedido de orçamento"]]],
+  ["Teste manual: orçamento pelo WhatsApp", [["11-whatsapp", "Ao clicar em Enviar pelo WhatsApp, abre a conversa com a mensagem pronta"]]],
 ];
 
 const slides = [];
@@ -105,7 +106,7 @@ slidesTelas.forEach(([titulo, itens]) => {
   slides.push(`
 <section class="slide">
   <h2>${titulo}</h2>
-  <div class="telas">${itens.map(([b, l]) => figura(b, l)).join("")}</div>
+  <div class="telas${itens.length === 1 ? " um" : ""}">${itens.map(([b, l]) => figura(b, l)).join("")}</div>
 </section>`);
 });
 
@@ -127,7 +128,7 @@ slides.push(`
   <h2>Testes</h2>
   <div class="duas">
     <div class="caixa"><h3>30 testes automatizados</h3><p><strong>30 aprovados.</strong> Cadastro, validação, edição, exclusão, pesquisa, persistência, segurança (XSS), orçamento, acessibilidade e links.</p></div>
-    <div class="caixa"><h3>Navegador real e capturas</h3><p>Upload de imagem, abas, teclado e abertura direta do arquivo testados no Edge (4 aprovados), mais capturas em 1366 px e 390 px. Tabela completa em <code>docs/entrega/tabela-de-testes.md</code>.</p></div>
+    <div class="caixa"><h3>Navegador real e capturas</h3><p>Upload de imagem, abas, teclado e abertura direta do arquivo testados no Edge, mais o envio pelo WhatsApp verificado à mão (5 aprovados) e capturas em 1366 px e 390 px. Tabela completa em <code>docs/entrega/tabela-de-testes.md</code>.</p></div>
   </div>
   <p class="nota"><strong>Bugs encontrados e corrigidos:</strong> imagens recortadas nos cards, produtos antigos sem imagem no navegador, inserção de texto com <code>innerHTML</code> (XSS) e plural errado no contador da pesquisa.</p>
 </section>`);
@@ -148,7 +149,7 @@ const testesA = [
 ];
 const testesB = [
   ["CT16", "Pesquisar \"torta\"", "Filtra e atualiza o contador", "1 card; \"1 produto encontrado\"", "✅ Passou", "08-pesquisa"],
-  ["CT20", "Recarregar a página", "Dados mantidos", "Produto cadastrado continua", "✅ Passou", "06-cadastro-sucesso"],
+  ["CM04", "Clicar em Enviar pelo WhatsApp (verificado à mão)", "Abre o WhatsApp com a mensagem pronta", "Nova aba com a mensagem do pedido", "✅ Passou", "11-whatsapp"],
   ["CV01", "Abrir em 1366 px (computador)", "Seções completas e legíveis", "Todas as seções e imagens inteiras", "✅ Passou", "01-landing-desktop"],
   ["CV02", "Abrir em 390 px (celular)", "Uma coluna, sem rolagem lateral", "Layout em uma coluna", "✅ Passou", "02-landing-celular"],
   ["CT25", "Pedir orçamento pelo formulário", "Abre o WhatsApp com a mensagem pronta", "Link com nome, produto, data e detalhes", "✅ Passou", "10-encomenda"],
@@ -162,7 +163,7 @@ const testesB = [
     <tr><th>ID</th><th>Caso de teste</th><th>Esperado</th><th>Obtido</th><th>Status</th><th>Evidência</th></tr>
     ${linhas.map(linhaTeste).join("\n    ")}
   </table>
-  ${k === 1 ? '<p class="nota">Tabela completa: 30 testes automatizados, 2 visuais e 5 em navegador real ou manuais (o CM04, abrir o WhatsApp, é verificado à mão). Detalhes em <code>docs/entrega/tabela-de-testes.md</code>.</p>' : ""}
+  ${k === 1 ? '<p class="nota">Tabela completa: 30 testes automatizados, 2 visuais e 5 em navegador real ou à mão, todos aprovados. Detalhes em <code>docs/entrega/tabela-de-testes.md</code>.</p>' : ""}
 </section>`);
 });
 
@@ -231,6 +232,7 @@ td { padding: 12px 16px; border-bottom: 1px solid #e6dfe9; }
 figure { background: #f7f3fb; border-radius: 12px; padding: 12px; }
 figure img { max-width: 100%; max-height: 430px; width: auto; height: auto; margin: 0 auto; background: #fff; border-radius: 8px; display: block; }
 .telas { align-items: center; }
+.telas.um { grid-template-columns: 1fr; width: 72%; margin: 0 auto; }
 figure .vazio { height: 430px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 3px dashed #c9bfd3; border-radius: 8px; color: #7a6f80; font-size: 24px; line-height: 1.6; }
 figcaption { text-align: center; font-size: 22px; font-weight: 600; margin-top: 10px; }
 table.tt { font-size: 18px; }

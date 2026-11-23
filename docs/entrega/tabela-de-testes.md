@@ -10,7 +10,7 @@
 | **Automatizado** (CT01 a CT30) | A página real (`index.html` + `script.js`) foi carregada num simulador de navegador (jsdom, no Node.js). Os testes preenchem formulários, clicam nos botões, pesquisam e conferem o resultado na tela e no `localStorage`. O resultado abaixo é o que o código realmente devolveu. | 30 |
 | **Visual** (CV01 a CV02) | Capturas de tela feitas com o Edge, em 1366 px (desktop) e 390 px (celular). | 2 |
 | **Navegador real** (CM01, CM02, CM03, CM05) | Executados no Edge controlado por automação (protocolo DevTools): escolha de arquivo de imagem, cliques nas abas, teclas Tab e Enter, e abertura direta do arquivo. | 4 |
-| **Manual** (CM04) | Abrir o WhatsApp de verdade, que depende do aplicativo ou do site no computador. | 1 |
+| **Manual** (CM04) | Verificado à mão: clicar em Enviar pelo WhatsApp e conferir a nova aba com a mensagem pronta. | 1 |
 
 **Resumo dos automatizados: 30 de 30 passaram.**
 
@@ -67,7 +67,7 @@ Um teste foi validado de forma contrária: ao trocar `textContent` por `innerHTM
 | CM01 | Cadastro | Cadastrar um produto escolhendo uma imagem do computador e recarregar a página. | O card aparece com a foto escolhida, reduzida para no máximo 480 px, e continua após recarregar. | aviso: "Produto cadastrado!"; 5 cards; imagem salva como data:image/jpeg;base64… (480x439 px, ~59 KB); após recarregar o produto continua: true | ✅ Passou | [print 06](img/06-cadastro-sucesso.jpg) |
 | CM02 | Navegação | Clicar em cada aba do menu (Sobre, Catálogo, Galeria, Encomenda, Contato e Início). | A página rola até a seção e a aba da seção fica destacada. | sobre: aba #sobre, seção a 96px do topo; catalogo: aba #catalogo, seção a 96px do topo; galeria: aba #galeria, seção a 96px do topo; encomenda: aba #encomenda, seção a 96px do topo; contato: aba #contato, seção a 623px do topo; inicio: aba #inicio, seção a 96px do topo | ✅ Passou | [print 01](img/01-landing-desktop.jpg) |
 | CM03 | Acessibilidade | Navegar só com o teclado (Tab) até o botão Editar e apertar Enter. | Cada elemento recebe foco visível e o botão funciona com Enter. | 10 Tabs até chegar no botão Editar; 10 de 10 elementos com foco visível (contorno ou sombra); Enter no botão Editar abriu a edição: true | ✅ Passou | [print 07](img/07-edicao%20de%20um%20produto.jpg) |
-| CM04 | Orçamento | Preencher o formulário de orçamento e clicar em Enviar pelo WhatsApp. | Abre o WhatsApp numa nova aba com a mensagem pronta. A montagem da mensagem e do link já foi verificada no CT25. | _Preencher após testar no navegador._ | ⬜ A executar | Print após testar |
+| CM04 | Orçamento | Preencher o formulário de orçamento e clicar em Enviar pelo WhatsApp. | Abre o WhatsApp numa nova aba com a mensagem pronta. | Verificado à mão em 23/11/2026: ao clicar, abriu uma nova aba em `api.whatsapp.com/send` com a mensagem pronta ("Olá! Meu nome é Maria da Silva e gostaria de um orçamento. Produto: Torta doce de cereja. Data do evento: 23/11/2026. Detalhes: 20 fatias") e os botões Abrir app e Continuar para o WhatsApp Web. | ✅ Passou | [print 11](img/11-whatsapp.jpg) |
 | CM05 | Compatibilidade | Abrir `index.html` direto do arquivo (endereço `file://`), sem servidor, e rolar a página. | A página abre com os 4 produtos e todas as imagens carregadas. | aberta por file:; 4 produtos; imagens que não carregaram: 0 | ✅ Passou | Execução automática (sem print) |
 
 ## 5. Bugs encontrados e corrigidos durante os testes

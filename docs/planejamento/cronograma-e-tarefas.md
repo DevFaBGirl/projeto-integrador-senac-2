@@ -88,10 +88,10 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 
 | ID | Área | Tarefa | Prazo | Depende de | Responsável | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| T27 | QA | Executar os casos de teste e preencher a tabela (resultado obtido, status, evidência) | 17/11 | T19, T26 | Fabiana | 🟨 |
+| T27 | QA | Executar os casos de teste e preencher a tabela (resultado obtido, status, evidência) | 17/11 | T19, T26 | Fabiana | ✅ |
 | T28 | QA | Registrar bugs encontrados (passos para reproduzir, print) e repassar a quem desenvolveu | 17/11 | T27 | Fabiana | ✅ |
 | T29 | GES | Corrigir bugs e fazer refatoração leve | 18/11 | T28 | Fabiana | ✅ |
-| T30 | QA | Reteste dos bugs corrigidos e teste de regressão (os dados continuam ao recarregar a página) | 18/11 | T29 | Fabiana | 🟨 |
+| T30 | QA | Reteste dos bugs corrigidos e teste de regressão (os dados continuam ao recarregar a página) | 18/11 | T29 | Fabiana | ✅ |
 
 ### Fase 4 — Documentação e evidências (19/11 a 21/11)
 
@@ -163,3 +163,4 @@ Cada tarefa concluída é anotada aqui com a data, o responsável e o commit que
 | 23/11/2026 | T32 a T34 | Fabiana | Gerador da apresentação (`docs/entrega/gerar-apresentacao.js`) e `apresentacao.pdf` com 14 slides, faltando os prints; roteiro do vídeo em `docs/entrega/roteiro-do-video.md`. Pasta de prints: `docs/entrega/img/` | a commitar |
 | 23/11/2026 | T27 a T31, T33 | Fabiana | Testes em navegador real (CM01, CM02, CM03 e CM05: 4 aprovados; CM04 depende do WhatsApp). Os 10 prints entraram na apresentação (`docs/entrega/img/`) e o PDF final foi gerado. Bug B04 (plural do contador da pesquisa) corrigido em `script.js` | a commitar |
 | 23/11/2026 | T33, T35 a T37 | Fabiana | Pacote de entrega fechado: tabela de testes com coluna de evidências (prints), PDF com a tabela de testes resumida e slide final com o link da aplicação (https://projeto-integrador-senac-2.vercel.app/), README com o link e a equipe. Participantes registrados: Camila Alves da Silva, Fabiana Balduína Freitas Silva (Tech Lead), Jonatas Sales dos Santos Vieira e Vitória Rodrigues | `commit final na main` |
+| 23/11/2026 | T27, T30 | Fabiana | CM04 verificado à mão: o botão Enviar pelo WhatsApp abre a nova aba com a mensagem pronta (print `docs/entrega/img/11-whatsapp.jpg`). Todos os testes da tabela estão aprovados; tabela e PDF atualizados | `commit final na main` |

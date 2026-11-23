@@ -14,6 +14,7 @@ Os prints da apresentação ficam nesta pasta. O gerador do PDF (`docs/entrega/g
 | `08-pesquisa` | Catálogo filtrado (por exemplo, pesquisando "torta") | Pronto |
 | `09-galeria` | Seção Galeria de trabalhos | Pronto |
 | `10-encomenda` | Seção Como encomendar | Pronto |
+| `11-whatsapp` | Teste manual CM04: nova aba do WhatsApp com a mensagem pronta | Pronto |
 
 Depois de adicionar ou trocar um print, rode `node docs/entrega/gerar-apresentacao.js` para atualizar o PDF.
 
