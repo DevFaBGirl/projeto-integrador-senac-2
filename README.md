@@ -21,7 +21,7 @@ Na primeira abertura, o catálogo vem com 8 produtos de exemplo. Para voltar a e
 
 ```
 site/
-├── index.html   # Landing page + formulário e catálogo de produtos
+├── index.html   # Landing page + formulário e catálogo/galeria de produtos
 ├── style.css    # Estilos (responsivo: 4, 2 ou 1 colunas)
 ├── script.js    # CRUD do catálogo em localStorage
 └── img/         # Imagens dos produtos
@@ -35,12 +35,12 @@ docs/            # Requisitos, planejamento, cronograma e registro de andamento
 | ID | Requisito | Onde está |
 | --- | --- | --- |
 | RL01 | Apresentação da confeiteira (nome, descrição, proposta e diferenciais) | Seção **Sobre** |
-| RL02 | Catálogo com nome, descrição, imagem e preço | Seção **Catálogo de Produtos** |
-| RL03 | Galeria de trabalhos | Seção **Galeria de Produtos** (veja a nota abaixo) |
+| RL02 | Catálogo com nome, descrição, imagem e preço | Seção **Catálogo e Galeria de Produtos** |
+| RL03 | Galeria de trabalhos | Mesma seção (veja a nota abaixo) |
 | RL04 | Informações para encomenda (prazo, tipos de produto, como pedir) | Seção **Como Encomendar** |
 | RL05 | Página responsiva que facilita o contato | Seção **Contato**, botão de WhatsApp e layout responsivo |
 
-> **Sobre a galeria (RL03):** o requisito pede imagens de trabalhos realizados. Para uma confeitaria, os trabalhos realizados são os próprios produtos prontos. Por isso a galeria foi apresentada como **Galeria de Produtos**: ela exibe as fotos dos bolos, doces e kits já produzidos, sem preço nem ações, o que a diferencia do catálogo.
+> **Sobre a galeria (RL03):** o requisito pede imagens de trabalhos realizados. Para uma confeitaria, os trabalhos realizados são os próprios produtos prontos. Por isso o catálogo e a galeria foram unidos em uma seção só: cada card mostra a foto do produto pronto junto com nome, descrição e preço. Assim a página fica mais limpa, sem repetir as mesmas imagens em duas seções.
 
 ### Gerenciamento do catálogo
 

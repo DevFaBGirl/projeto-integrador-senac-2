@@ -137,7 +137,8 @@ textarea:focus-visible {
 .sobre-detalhes { padding-left: 1.2rem; }
 .sobre-detalhes li { margin-bottom: 6px; }
 
-/* Catálogo */
+/* Catálogo e galeria */
+.catalogo-intro { text-align: center; margin: -12px 0 22px; }
 .grid-produtos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -203,31 +204,6 @@ textarea:focus-visible {
 .acoes button:hover { filter: brightness(0.9); }
 
 .vazio { text-align: center; grid-column: 1 / -1; }
-
-/* Galeria */
-.grid-galeria {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.grid-galeria figure {
-    background: #fff;
-    border: 1px solid var(--borda);
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-}
-
-.grid-galeria img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-    background: var(--creme);
-    border-radius: 6px;
-}
-
-.grid-galeria figcaption { margin-top: 8px; font-size: 0.95rem; }
 
 /* Depoimento */
 .depoimento {
@@ -356,13 +332,11 @@ footer {
 .toast.erro-toast { background: #8f2522; }
 
 @media (max-width: 960px) {
-    .grid-produtos,
-    .grid-galeria { grid-template-columns: repeat(2, 1fr); }
+    .grid-produtos { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 560px) {
-    .grid-produtos,
-    .grid-galeria { grid-template-columns: 1fr; }
+    .grid-produtos { grid-template-columns: 1fr; }
 }
 
 .contato-acao { text-align: center; margin-top: 8px; }

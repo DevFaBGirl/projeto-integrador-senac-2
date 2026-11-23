@@ -156,3 +156,4 @@ Cada tarefa concluída é anotada aqui com a data, o responsável e o commit que
 | 23/11/2026 | T12, T13, T15 | Fabiana | Redesign Sonho de Mel: catálogo com imagem (lista fechada de imagens), galeria apresentada como Galeria de Produtos (RL03), 8 produtos de exemplo e grade de 4/2/1 colunas | commit desta etapa na branch `feat/landing-page` |
 | 23/11/2026 | T08, T16, T18, T21, T22 | Fabiana | `script.js` reescrito: `try/catch` no `localStorage`, `id` estável, preço numérico, listagem sem `innerHTML` e com delegação de eventos, validação com `trim` e mensagens junto ao campo, toast de sucesso/erro | idem |
 | 23/11/2026 | T35 | Fabiana | `README.md` criado, com requisitos atendidos, nota sobre a galeria e boas práticas | idem |
+| 23/11/2026 | T12, T13 | Fabiana | Catálogo e galeria unidos em uma única seção ("Catálogo e Galeria de Produtos"), que cumpre RL02 e RL03; removida a galeria separada | commit desta etapa na branch `feat/landing-page` |
