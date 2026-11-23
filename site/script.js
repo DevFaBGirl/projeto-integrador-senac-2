@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
             card.classList.add("card");
             card.innerHTML = `
                 <div>
-                    <h3>${produto.nome}</h3>
-                    <p>${produto.descricao}</p>
+                    <h3></h3>
+                    <p class="descricao"></p>
                     <p><strong>R$ ${Number(produto.preco).toFixed(2)}</strong></p>
                 </div>
                 <div class="acoes">
@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <button class="btn-excluir" onclick="excluirProduto(${index})">Excluir</button>
                 </div>
             `;
+            // textContent trata o valor como texto puro, evitando XSS
+            card.querySelector("h3").textContent = produto.nome;
+            card.querySelector(".descricao").textContent = produto.descricao;
             containerProdutos.appendChild(card);
         });
     }
