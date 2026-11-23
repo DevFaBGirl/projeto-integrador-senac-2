@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Minha Confeitaria Online: bolos artesanais, doces e kits para festas feitos sob encomenda.">
-    <title>Minha Confeitaria Online</title>
+    <meta name="description" content="Sonho de Mel: bolos artesanais, doces e kits para festas feitos sob encomenda.">
+    <title>Sonho de Mel - Confeitaria Artesanal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Minha Confeitaria Online</h1>
-        <p>Bolos artesanais, doces e kits para festas feitos com carinho.</p>
+        <h1>Sonho de Mel</h1>
+        <p class="subtitle">Confeitaria artesanal, feita com carinho</p>
         <nav aria-label="Navegação principal">
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
@@ -23,45 +23,55 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Apresentação da confeiteira -->
-        <section id="sobre">
-            <h2>Sobre a confeiteira</h2>
-            <p>Olá! Eu faço bolos, doces e kits de festa sob encomenda, com ingredientes selecionados e acabamento feito à mão. Cada pedido é preparado com atenção aos detalhes, do sabor à decoração.</p>
-            <ul class="diferenciais">
-                <li><strong>Feito sob encomenda:</strong> cada produto é preparado para a sua data.</li>
-                <li><strong>Personalização:</strong> temas, cores e sabores combinados com você.</li>
-                <li><strong>Ingredientes selecionados:</strong> sabor caseiro e qualidade.</li>
-                <li><strong>Atendimento próximo:</strong> orçamento rápido pelo WhatsApp.</li>
-            </ul>
-        </section>
-
-        <!-- Catálogo de Produtos -->
-        <section id="catalogo-section">
-            <h2>Catálogo de Produtos</h2>
-            <div id="produtos-container" class="grid-produtos"></div>
-        </section>
-
-        <!-- Galeria de trabalhos -->
-        <section id="galeria">
-            <h2>Galeria de trabalhos</h2>
-            <p>Alguns dos trabalhos já entregues. Substitua os espaços abaixo pelas fotos reais em <code>site/img/</code>.</p>
-            <div class="grid-galeria">
-                <figure><div class="foto" role="img" aria-label="Bolo de aniversário decorado">🎂</div><figcaption>Bolo de aniversário</figcaption></figure>
-                <figure><div class="foto" role="img" aria-label="Caixa de brigadeiros gourmet">🍫</div><figcaption>Brigadeiros gourmet</figcaption></figure>
-                <figure><div class="foto" role="img" aria-label="Cupcakes decorados">🧁</div><figcaption>Cupcakes decorados</figcaption></figure>
-                <figure><div class="foto" role="img" aria-label="Kit festa com doces variados">🍬</div><figcaption>Kit festa</figcaption></figure>
-                <figure><div class="foto" role="img" aria-label="Torta doce">🥧</div><figcaption>Tortas doces</figcaption></figure>
-                <figure><div class="foto" role="img" aria-label="Biscoitos personalizados">🍪</div><figcaption>Biscoitos personalizados</figcaption></figure>
+    <main class="container">
+        <!-- Apresentação -->
+        <section id="sobre" class="sobre">
+            <h2 class="section-title">Sobre a Sonho de Mel</h2>
+            <div class="sobre-content">
+                <div class="sobre-selo" role="img" aria-label="Selo da confeitaria Sonho de Mel">🍯</div>
+                <div class="sobre-texto">
+                    <p>A Sonho de Mel nasceu da paixão por transformar momentos em lembranças doces. Cada bolo, doce e kit de festa é feito à mão, sob encomenda, com ingredientes selecionados e acabamento caprichado, do sabor à decoração.</p>
+                    <ul class="sobre-detalhes">
+                        <li><strong>Feito sob encomenda:</strong> cada produto é preparado para a sua data.</li>
+                        <li><strong>Personalização:</strong> temas, cores e sabores combinados com você.</li>
+                        <li><strong>Atendimento próximo:</strong> orçamento rápido pelo WhatsApp.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- Informações para encomenda -->
-        <section id="encomendas">
-            <h2>Como encomendar</h2>
-            <ol>
+        <!-- Catálogo (vem do gerenciamento) -->
+        <section id="catalogo-section" class="produtos">
+            <h2 class="section-title">Catálogo de Produtos</h2>
+            <div id="produtos-container" class="grid-produtos"></div>
+        </section>
+
+        <!-- Galeria -->
+        <section id="galeria" class="galeria">
+            <h2 class="section-title">Galeria de Produtos</h2>
+            <div class="grid-galeria">
+                <figure><img src="img/bolo.png" alt="Bolo de aniversário com velas e confeitos" loading="lazy"><figcaption>Bolo de aniversário</figcaption></figure>
+                <figure><img src="img/cupcake.png" alt="Cupcake decorado com confeitos" loading="lazy"><figcaption>Cupcake decorado</figcaption></figure>
+                <figure><img src="img/brigadeiro.png" alt="Brigadeiros gourmet" loading="lazy"><figcaption>Brigadeiros gourmet</figcaption></figure>
+                <figure><img src="img/kit-festa.png" alt="Doces para kit festa" loading="lazy"><figcaption>Kit festa</figcaption></figure>
+                <figure><img src="img/torta.png" alt="Torta doce" loading="lazy"><figcaption>Torta doce</figcaption></figure>
+                <figure><img src="img/biscoito.png" alt="Biscoitos personalizados" loading="lazy"><figcaption>Biscoitos personalizados</figcaption></figure>
+                <figure><img src="img/pao-de-mel.png" alt="Pão de mel" loading="lazy"><figcaption>Pão de mel</figcaption></figure>
+                <figure><img src="img/bolo-de-pote.png" alt="Bolo de pote" loading="lazy"><figcaption>Bolo de pote</figcaption></figure>
+            </div>
+        </section>
+
+        <blockquote class="depoimento">
+            <p>Cada doce leva um pouco de mel e muito carinho. <br>Para adoçar o seu dia 🍯</p>
+            <cite>Sonho de Mel</cite>
+        </blockquote>
+
+        <!-- Encomendas -->
+        <section id="encomendas" class="info">
+            <h2 class="section-title">Como Encomendar</h2>
+            <ol class="passos">
                 <li>Escolha o produto no catálogo ou conte a sua ideia.</li>
-                <li>Envie uma mensagem com a data, a quantidade e o tema.</li>
+                <li>Envie a data, a quantidade e o tema pelo formulário ou WhatsApp.</li>
                 <li>Receba o orçamento e confirme o pedido.</li>
                 <li>Retire ou combine a entrega na data marcada.</li>
             </ol>
@@ -70,40 +80,59 @@
         </section>
 
         <!-- Contato -->
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Dados de exemplo, a serem trocados pelos reais.</p>
-            <ul class="contato">
+        <section id="contato" class="contato-form">
+            <h2 class="section-title">Ficou com água na boca? 😋</h2>
+            <p class="contato-form-sub">Fale com a gente, respondemos rapidinho</p>
+            <ul class="contato-dados">
                 <li><strong>WhatsApp:</strong> (11) 90000-0000</li>
-                <li><strong>E-mail:</strong> contato@minhaconfeitaria.example</li>
+                <li><strong>E-mail:</strong> contato@sonhodemel.example</li>
                 <li><strong>Localização:</strong> São Paulo, SP (retirada com hora marcada)</li>
                 <li><strong>Horário:</strong> segunda a sábado, das 9h às 18h</li>
             </ul>
+            <p class="aviso">Dados de exemplo para fins acadêmicos.</p>
+            <p class="contato-acao">
+                <a class="btn-principal btn-link" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Gostaria%20de%20pedir%20um%20or%C3%A7amento%20na%20Sonho%20de%20Mel." target="_blank" rel="noopener">Pedir orçamento pelo WhatsApp</a>
+            </p>
         </section>
 
-        <!-- Formulário de Cadastro / Edição -->
-        <section id="admin-section">
-            <h2>Gerenciamento de Produtos</h2>
+        <!-- Gerenciamento do catálogo -->
+        <section id="admin-section" class="admin">
+            <h2 class="section-title">Gerenciamento de Produtos</h2>
             <p class="aviso">Área de demonstração: os produtos ficam salvos apenas neste navegador.</p>
-            <form id="produto-form">
+            <form id="produto-form" novalidate>
                 <input type="hidden" id="produto-id">
                 <label for="nome">Nome do produto
-                    <input type="text" id="nome" placeholder="Ex.: Bolo de cenoura" required>
+                    <input type="text" id="nome" placeholder="Ex.: Bolo de cenoura" maxlength="60" aria-describedby="erro-nome">
+                    <span class="erro" id="erro-nome" role="alert"></span>
                 </label>
                 <label for="descricao">Descrição
-                    <input type="text" id="descricao" placeholder="Ex.: Com cobertura de chocolate" required>
+                    <input type="text" id="descricao" placeholder="Ex.: Com cobertura de chocolate" maxlength="140" aria-describedby="erro-descricao">
+                    <span class="erro" id="erro-descricao" role="alert"></span>
                 </label>
                 <label for="preco">Preço (R$)
-                    <input type="number" id="preco" placeholder="0,00" step="0.01" required>
+                    <input type="number" id="preco" placeholder="0,00" step="0.01" min="0" aria-describedby="erro-preco">
+                    <span class="erro" id="erro-preco" role="alert"></span>
                 </label>
-                <button type="submit" id="salvar-btn">Cadastrar Produto</button>
+                <label for="imagem">Imagem
+                    <select id="imagem"></select>
+                </label>
+                <div class="form-acoes">
+                    <button type="submit" id="salvar-btn" class="btn-principal">Cadastrar Produto</button>
+                    <button type="button" id="cancelar-btn" class="btn-secundario" hidden>Cancelar edição</button>
+                </div>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 Minha Confeitaria Online</p>
+        <p>© 2026 Sonho de Mel · Projeto Integrador SENAC</p>
     </footer>
+
+    <a href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20na%20Sonho%20de%20Mel." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+        <img src="img/whatsapp.jpg" alt="">
+    </a>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
     <script src="script.js"></script>
 </body>

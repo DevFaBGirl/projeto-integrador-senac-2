@@ -58,17 +58,17 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 
 | ID | Área | Tarefa | Prazo | Depende de | Responsável | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| T08 | GES | Extrair utilitários: leitura/escrita seguras do `localStorage` com `try/catch` (C03), `escapeHtml`, `gerarId()` e `toast()` | 11/11 | T03 |  | ⬜ |
+| T08 | GES | Extrair utilitários: leitura/escrita seguras do `localStorage` com `try/catch` (C03), `escapeHtml`, `gerarId()` e `toast()` | 11/11 | T03 | Fabiana | ✅ |
 | T09 | GES | Evoluir `style.css`: variáveis CSS, tipografia e identidade visual, mobile-first (o estilo base já existe) | 11/11 | T02 |  | 🟨 |
 | T10 | LP | Completar o HTML da landing page: menu, seções e rodapé, com marcação semântica (já há cabeçalho e catálogo) | 11/11 | T02, T05 | Fabiana | ✅ |
 | T11 | LP | Seção **Apresentação da confeiteira**: descrição, proposta e diferenciais (já há título e uma frase) — RL01 | 11/11 | T10 | Fabiana | ✅ |
-| T12 | CAT | **Catálogo de produtos** com imagem (hoje mostra nome, descrição e preço) — RL02, C08 | 12/11 | T06, T15 |  | 🟨 |
-| T13 | LP | Seção **Galeria de trabalhos** — RL03 | 12/11 | T10 | Fabiana | 🟨 |
+| T12 | CAT | **Catálogo de produtos** com imagem (hoje mostra nome, descrição e preço) — RL02, C08 | 12/11 | T06, T15 | Fabiana | ✅ |
+| T13 | LP | Seção **Galeria de trabalhos** — RL03 | 12/11 | T10 | Fabiana | ✅ |
 | T14 | LP | Seção **Informações para encomenda** (prazo mínimo, tipos de produto, como pedir orçamento) e contato — RL04 | 12/11 | T10 | Fabiana | ✅ |
-| T15 | CAT | Formulário de produto: acrescentar campo de imagem e `<label>` em todos os campos (C04, C08) | 11/11 | T02, T06 | Fabiana | 🟨 |
-| T16 | CAT | Lógica do cadastro e da edição: `id` estável no lugar do índice, preço numérico, tolerar o formato antigo dos dados (C05, C10) | 12/11 | T06, T08, T15 |  | 🟨 |
+| T15 | CAT | Formulário de produto: acrescentar campo de imagem e `<label>` em todos os campos (C04, C08) | 11/11 | T02, T06 | Fabiana | ✅ |
+| T16 | CAT | Lógica do cadastro e da edição: `id` estável no lugar do índice, preço numérico, tolerar o formato antigo dos dados (C05, C10) | 12/11 | T06, T08, T15 | Fabiana | ✅ |
 | T17 | CAT | Estrutura do catálogo em cartões com estado vazio | — | — |  | ✅ |
-| T18 | CAT | Lógica da listagem: escapar HTML (C02), trocar `onclick` por delegação de eventos (C09), ordenar | 12/11 | T08, T17 |  | 🟨 |
+| T18 | CAT | Lógica da listagem: escapar HTML (C02), trocar `onclick` por delegação de eventos (C09), ordenar | 12/11 | T08, T17 | Fabiana | ✅ |
 | T19 | QA | Escrever os casos de teste para o catálogo (cadastrar, editar, excluir, validação, persistência, estado vazio) e para a landing page (seções, links, imagens, responsividade) | 12/11 | T06 |  | ⬜ |
 | T39 | GES | Corrigir os achados rápidos do código inicial: remover `[cite: 5]` (C01) e o XSS do `innerHTML` (C02) | 10/11 | — | Fabiana | ✅ |
 
@@ -77,8 +77,8 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 | ID | Área | Tarefa | Prazo | Depende de | Responsável | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | T20 | INT | Navegação interna (menu e âncoras entre as seções) e acesso ao gerenciamento conforme a decisão do T01 | 13/11 | T11 a T18 | Fabiana | 🟨 |
-| T21 | CAT | Validações completas: obrigatórios, `trim`, preço maior que zero, mensagens junto ao campo (C06) | 14/11 | T16 |  | ⬜ |
-| T22 | GES | Feedback visual: toast de sucesso/erro, estados vazios e confirmação de exclusão (esta já existe) | 14/11 | T08 |  | 🟨 |
+| T21 | CAT | Validações completas: obrigatórios, `trim`, preço maior que zero, mensagens junto ao campo (C06) | 14/11 | T16 | Fabiana | ✅ |
+| T22 | GES | Feedback visual: toast de sucesso/erro, estados vazios e confirmação de exclusão (esta já existe) | 14/11 | T08 | Fabiana | ✅ |
 | T23 | LP | Responsividade da landing page (mobile, tablet, desktop) e otimização das imagens | 14/11 | T11 a T14 |  | ⬜ |
 | T24 | CAT | Responsividade do catálogo e do formulário no mobile (a grade já é fluida) | 14/11 | T18 |  | 🟨 |
 | T25 | GES | Acessibilidade: contraste WCAG AA, foco visível, navegação por teclado, `alt` nas imagens | 15/11 | T20 |  | ⬜ |
@@ -101,7 +101,7 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 | T32 | DOC | Escrever a seção de **boas práticas aplicadas** (código, Git, dados, segurança, UX, responsividade, acessibilidade) | 19/11 | T26 |  | ⬜ |
 | T33 | DOC | Montar o PDF da apresentação | 20/11 | T31, T32, T27 |  | ⬜ |
 | T34 | DOC | Gravar o vídeo de demonstração de 1 a 2 min: cadastrar e editar um produto (opcional, sugerido) | 20/11 | T30 |  | ⬜ |
-| T35 | GES | Escrever o `README.md` do repositório com instruções de uso | 20/11 | T26 |  | ⬜ |
+| T35 | GES | Escrever o `README.md` do repositório com instruções de uso | 20/11 | T26 | Fabiana | ✅ |
 | T36 | GES | Revisão geral (aplicação e documentos) e ajustes finais | 21/11 | T33 a T35 |  | ⬜ |
 | T37 | GES | Montar e conferir o pacote de entrega (PDF, prints, tabela de testes, vídeo ou link) | 22/11 | T36 |  | ⬜ |
 | T38 | GES | **Entregar** | **23/11** | T37 |  | ⬜ |
@@ -153,3 +153,6 @@ Cada tarefa concluída é anotada aqui com a data, o responsável e o commit que
 | 23/11/2026 | T10, T11, T14 | Fabiana | Landing page com menu, seções Sobre, Como encomendar e Contato, rodapé e marcação semântica (`main`, `nav`, `footer`). Textos e contatos são de exemplo | branch `feat/landing-page` |
 | 23/11/2026 | T13 | Fabiana | Seção Galeria criada com espaços ilustrados; faltam as fotos reais em `site/img/` | branch `feat/landing-page` |
 | 23/11/2026 | T15, T20 | Fabiana | `<label>` em todos os campos do formulário (C04) e navegação por âncoras no menu; falta o campo de imagem | branch `feat/landing-page` |
+| 23/11/2026 | T12, T13, T15 | Fabiana | Redesign Sonho de Mel: catálogo com imagem (lista fechada de imagens), galeria apresentada como Galeria de Produtos (RL03), 8 produtos de exemplo e grade de 4/2/1 colunas | commit desta etapa na branch `feat/landing-page` |
+| 23/11/2026 | T08, T16, T18, T21, T22 | Fabiana | `script.js` reescrito: `try/catch` no `localStorage`, `id` estável, preço numérico, listagem sem `innerHTML` e com delegação de eventos, validação com `trim` e mensagens junto ao campo, toast de sucesso/erro | idem |
+| 23/11/2026 | T35 | Fabiana | `README.md` criado, com requisitos atendidos, nota sobre a galeria e boas práticas | idem |
