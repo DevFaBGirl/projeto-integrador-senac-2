@@ -59,7 +59,7 @@ Funcionalidade **opcional** ainda não feita: pesquisar/filtrar produtos. Editar
 | Item | Valor |
 | --- | --- |
 | Disciplina/etapa | Projeto Integrador — 2ª etapa |
-| Equipe | Grupo 37: Aram Juliano Soares Zap, Camila Alves da Silva, Fabiana Balduína Freitas Silva, Jonatas Sales dos Santos Vieira, Vitória Rodrigues |
+| Equipe | Grupo 37: Camila Alves da Silva, Fabiana Balduína Freitas Silva, Jonatas Sales dos Santos Vieira, Vitória Rodrigues |
 | Prazo final | 23/11/2026 |
 | Plano de ação criado em | 22/10/2026 |
 | Código inicial | `site/`, enviado por Jonatas em 07/11/2026 |

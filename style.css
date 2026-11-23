@@ -182,7 +182,7 @@ textarea.input { resize: vertical; }
   display: flex; flex-direction: column;
   box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
 }
-.product__img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; background: #f3eefb; }
+.product__img { aspect-ratio: 4 / 3; width: 100%; object-fit: contain; padding: 8px; background: #fff; }
 .product__img--default { object-fit: contain; padding: 14px; }
 .product__body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .product__name { font-size: 1.2rem; overflow-wrap: anywhere; }

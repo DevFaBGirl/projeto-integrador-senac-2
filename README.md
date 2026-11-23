@@ -3,7 +3,18 @@
 Landing page de divulgação com catálogo de produtos gerenciável para confeiteiras/os autônomas/os.
 Projeto Integrador SENAC, 2ª etapa: *Desenvolvimento da Aplicação Web utilizando Boas Práticas de Desenvolvimento de Software*.
 
+**Acesse e teste a aplicação:** https://projeto-integrador-senac-2.vercel.app/
+
 A aplicação é 100% client-side (HTML, CSS e JavaScript), sem backend e sem banco de dados externo. Os produtos ficam no `localStorage` do navegador.
+
+## Equipe
+
+Grupo 37, participantes do projeto:
+
+- Camila Alves da Silva
+- Fabiana Balduína Freitas Silva · Tech Lead
+- Jonatas Sales dos Santos Vieira
+- Vitória Rodrigues
 
 ## Como executar
 
@@ -72,3 +83,12 @@ O nome da confeiteira, os textos, os preços, o WhatsApp, o Instagram e o endere
 ## Documentação
 
 Requisitos, pendências, cronograma de tarefas e o registro de andamento estão em [`docs/`](docs/README.md).
+
+## Entrega
+
+Os arquivos da entrega estão em [`docs/entrega/`](docs/entrega/):
+
+- `apresentacao.pdf`: apresentação, gerada com `node docs/entrega/gerar-apresentacao.js`. Termina com o link da aplicação.
+- `tabela-de-testes.md`: casos de teste, resultados e bugs corrigidos.
+- `roteiro-do-video.md`: roteiro do vídeo de demonstração.
+- `img/`: prints das telas usados na apresentação.

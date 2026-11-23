@@ -2,6 +2,8 @@
 
 "Minha Confeitaria Online" — landing page de divulgação com catálogo de produtos gerenciável (cadastro, listagem, edição e exclusão) para confeiteiras/os autônomas/os. Projeto Integrador SENAC (2ª etapa), Grupo 37. O código está na raiz do repositório ([`index.html`](../index.html), [`style.css`](../style.css) e [`script.js`](../script.js)).
 
+Aplicação publicada: https://projeto-integrador-senac-2.vercel.app/ · Arquivos da entrega (PDF, tabela de testes e roteiro do vídeo): [`entrega/`](entrega/).
+
 ## Fundação
 
 | Documento | Conteúdo |

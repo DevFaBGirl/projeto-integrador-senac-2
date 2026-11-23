@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Minha Confeitaria Online - Apresentação</title>
+<style>
+@page { size: 1280px 720px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Segoe UI", Arial, sans-serif; color: #2b2326; }
+.slide { width: 1280px; height: 720px; padding: 56px 72px; page-break-after: always; background: #fff; position: relative; overflow: hidden; border-top: 14px solid #d6356a; }
+.slide:last-child { page-break-after: auto; }
+h1 { font-size: 66px; line-height: 1.05; margin: 10px 0 18px; }
+h2 { font-size: 44px; margin-bottom: 30px; color: #2b2326; }
+h3 { font-size: 24px; margin-bottom: 10px; color: #b02454; }
+p, li { font-size: 24px; line-height: 1.45; }
+ul { padding-left: 28px; }
+ul.grande li, p.grande { font-size: 30px; margin-bottom: 16px; }
+.capa { background: linear-gradient(135deg, #fff5f8, #f3eefb); display: flex; flex-direction: column; justify-content: center; }
+.etq { font-size: 22px; letter-spacing: 2px; text-transform: uppercase; color: #d6356a; font-weight: 700; }
+.sub { font-size: 34px; margin-bottom: 36px; }
+.meta { font-size: 22px; color: #5d5156; }
+.duas { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
+.caixa { background: #f7f3fb; border-radius: 14px; padding: 24px 26px; }
+.trio .caixa p { font-size: 20px; }
+.nota { margin-top: 28px; font-size: 22px; color: #5d5156; }
+code { background: #efe9f7; padding: 1px 6px; border-radius: 5px; font-size: .88em; }
+table { width: 100%; border-collapse: collapse; font-size: 23px; }
+th { text-align: left; background: #2b2326; color: #fff; padding: 12px 16px; }
+td { padding: 12px 16px; border-bottom: 1px solid #e6dfe9; }
+.telas { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+figure { background: #f7f3fb; border-radius: 12px; padding: 12px; }
+figure img { max-width: 100%; max-height: 430px; width: auto; height: auto; margin: 0 auto; background: #fff; border-radius: 8px; display: block; }
+.telas { align-items: center; }
+figure .vazio { height: 430px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 3px dashed #c9bfd3; border-radius: 8px; color: #7a6f80; font-size: 24px; line-height: 1.6; }
+figcaption { text-align: center; font-size: 22px; font-weight: 600; margin-top: 10px; }
+table.tt { font-size: 18px; }
+table.tt th { padding: 10px 12px; }
+table.tt td { padding: 5px 12px; vertical-align: middle; line-height: 1.25; }
+table.tt td.id { font-weight: 700; white-space: nowrap; }
+table.tt td.st { white-space: nowrap; font-weight: 600; }
+table.tt td.ev { width: 130px; }
+table.tt td.ev img { display: block; width: 112px; height: 62px; object-fit: cover; object-position: top left; border-radius: 5px; border: 1px solid #d8cfe0; }
+.tabela { padding-top: 30px; }
+.tabela h2 { font-size: 38px; margin-bottom: 14px; }
+.tabela .nota { margin-top: 12px; font-size: 18px; }
+table.tt .sem { color: #7a6f80; font-size: 16px; }
+.acesso .link { font-size: 40px; font-weight: 700; margin: 6px 0 34px; }
+.acesso a { color: #b02454; text-decoration: none; border-bottom: 3px solid #d6356a; }
+</style></head><body>
+
+<section class="slide capa">
+  <p class="etq">Projeto Integrador SENAC · 2ª etapa</p>
+  <h1>Minha Confeitaria Online</h1>
+  <p class="sub">Landing page com catálogo de produtos gerenciável</p>
+  <p class="meta">Grupo 37 · 2026<br>Desenvolvimento da Aplicação Web utilizando Boas Práticas de Desenvolvimento de Software</p>
+</section>
+
+<section class="slide">
+  <h2>O problema</h2>
+  <ul class="grande">
+    <li>Confeiteiras e confeiteiros autônomos têm <strong>produtos, contato e encomendas espalhados</strong> em redes sociais e aplicativos de mensagem.</li>
+    <li>Falta um lugar <strong>profissional e organizado</strong> para se apresentar e mostrar o trabalho.</li>
+    <li>Clientes têm dúvidas sobre prazo, tipos de produto e como pedir orçamento.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>A solução</h2>
+  <div class="duas">
+    <div class="caixa"><h3>Vitrine pública</h3><p>Landing page responsiva que apresenta a confeiteira, o catálogo, a galeria de trabalhos e as informações para encomenda, com orçamento direto pelo WhatsApp.</p></div>
+    <div class="caixa"><h3>Catálogo gerenciável</h3><p>A própria confeiteira cadastra, lista, edita, exclui e pesquisa os produtos, sem login e sem banco de dados externo.</p></div>
+  </div>
+  <p class="nota">Público: confeiteiras autônomas e pessoas que querem encomendar bolos, doces e kits para festas.</p>
+</section>
+
+<section class="slide">
+  <h2>Funcionalidades</h2>
+  <table>
+    <tr><th>Landing page</th><th>Gerenciamento do catálogo</th></tr>
+    <tr><td>Apresentação da confeiteira</td><td>Cadastrar produto (nome, descrição, preço e imagem)</td></tr>
+    <tr><td>Catálogo com imagem e preço</td><td>Listar produtos, com estado vazio</td></tr>
+    <tr><td>Galeria de trabalhos</td><td>Editar e excluir (com confirmação)</td></tr>
+    <tr><td>Informações para encomenda</td><td>Pesquisar por nome</td></tr>
+    <tr><td>Contato e orçamento pelo WhatsApp</td><td>Validação e avisos de sucesso/erro</td></tr>
+  </table>
+  <p class="nota">Dados salvos no <code>localStorage</code> do navegador.</p>
+</section>
+
+<section class="slide">
+  <h2>Tecnologias e estrutura</h2>
+  <div class="duas">
+    <div class="caixa"><h3>Tecnologias</h3><ul><li>HTML, CSS e JavaScript puros</li><li><code>localStorage</code> para os dados</li><li>Git e GitHub para versionamento</li></ul></div>
+    <div class="caixa"><h3>Arquivos</h3><ul><li><code>index.html</code>: estrutura</li><li><code>style.css</code>: aparência</li><li><code>script.js</code>: comportamento</li><li><code>img/</code>: ilustrações</li><li><code>docs/</code>: documentação</li></ul></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Telas: página inicial</h2>
+  <div class="telas"><figure><img src="img/01-landing-desktop.jpg" alt="Página inicial no computador"><figcaption>Página inicial no computador</figcaption></figure><figure><img src="img/02-landing-celular.jpg" alt="Página inicial no celular"><figcaption>Página inicial no celular</figcaption></figure></div>
+</section>
+
+<section class="slide">
+  <h2>Telas: catálogo e pesquisa</h2>
+  <div class="telas"><figure><img src="img/03-catalogo.jpg" alt="Catálogo de produtos"><figcaption>Catálogo de produtos</figcaption></figure><figure><img src="img/08-pesquisa.png" alt="Pesquisa por nome"><figcaption>Pesquisa por nome</figcaption></figure></div>
+</section>
+
+<section class="slide">
+  <h2>Telas: validação e feedback</h2>
+  <div class="telas"><figure><img src="img/05-erro-validacao.png" alt="Mensagens de erro junto aos campos"><figcaption>Mensagens de erro junto aos campos</figcaption></figure><figure><img src="img/06-cadastro-sucesso.jpg" alt="Aviso de sucesso ao cadastrar"><figcaption>Aviso de sucesso ao cadastrar</figcaption></figure></div>
+</section>
+
+<section class="slide">
+  <h2>Telas: edição e galeria</h2>
+  <div class="telas"><figure><img src="img/07-edicao%20de%20um%20produto.jpg" alt="Edição de um produto"><figcaption>Edição de um produto</figcaption></figure><figure><img src="img/09-galeria%20de%20trabalhos.jpg" alt="Galeria de trabalhos"><figcaption>Galeria de trabalhos</figcaption></figure></div>
+</section>
+
+<section class="slide">
+  <h2>Telas: cadastro e encomenda</h2>
+  <div class="telas"><figure><img src="img/04-formulario-cadastro_encomenda.jpg" alt="Formulário de cadastro de produto"><figcaption>Formulário de cadastro de produto</figcaption></figure><figure><img src="img/10-encomenda.jpg" alt="Como encomendar e pedido de orçamento"><figcaption>Como encomendar e pedido de orçamento</figcaption></figure></div>
+</section>
+
+<section class="slide">
+  <h2>Boas práticas aplicadas</h2>
+  <div class="trio">
+    <div class="caixa"><h3>Código</h3><p>Separação entre HTML, CSS e JS; eventos por delegação, sem <code>onclick</code> no HTML.</p></div>
+    <div class="caixa"><h3>Segurança e dados</h3><p>Textos inseridos com <code>textContent</code> (contra XSS); <code>try/catch</code> no <code>localStorage</code>; cada produto com <code>id</code>.</p></div>
+    <div class="caixa"><h3>Validação</h3><p>Campos obrigatórios, <code>trim</code>, preço maior que zero e mensagens junto ao campo.</p></div>
+    <div class="caixa"><h3>Acessibilidade</h3><p><code>label</code> em todos os campos, <code>alt</code> nas imagens, foco visível e avisos com <code>aria-live</code>.</p></div>
+    <div class="caixa"><h3>Responsividade</h3><p>Layout adaptado para computador e celular, conferido em 1366 px e 390 px.</p></div>
+    <div class="caixa"><h3>Git</h3><p>Branches por tipo de mudança, commits semânticos em português e registro de andamento no cronograma.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h2>Testes</h2>
+  <div class="duas">
+    <div class="caixa"><h3>30 testes automatizados</h3><p><strong>30 aprovados.</strong> Cadastro, validação, edição, exclusão, pesquisa, persistência, segurança (XSS), orçamento, acessibilidade e links.</p></div>
+    <div class="caixa"><h3>Navegador real e capturas</h3><p>Upload de imagem, abas, teclado e abertura direta do arquivo testados no Edge (4 aprovados), mais capturas em 1366 px e 390 px. Tabela completa em <code>docs/entrega/tabela-de-testes.md</code>.</p></div>
+  </div>
+  <p class="nota"><strong>Bugs encontrados e corrigidos:</strong> imagens recortadas nos cards, produtos antigos sem imagem no navegador, inserção de texto com <code>innerHTML</code> (XSS) e plural errado no contador da pesquisa.</p>
+</section>
+
+<section class="slide tabela">
+  <h2>Tabela de testes (1 de 2)</h2>
+  <table class="tt">
+    <tr><th>ID</th><th>Caso de teste</th><th>Esperado</th><th>Obtido</th><th>Status</th><th>Evidência</th></tr>
+    <tr><td class="id">CT01</td><td>Abrir a página pela primeira vez</td><td>4 produtos de exemplo, com imagem</td><td>4 cards; contador "4 produtos"</td><td class="st">✅ Passou</td><td class="ev"><img src="img/03-catalogo.jpg" alt="Print 03-catalogo"></td></tr>
+    <tr><td class="id">CT02</td><td>Cadastrar um produto válido</td><td>Novo card e aviso de sucesso</td><td>5 cards; aviso "Produto cadastrado!"</td><td class="st">✅ Passou</td><td class="ev"><img src="img/06-cadastro-sucesso.jpg" alt="Print 06-cadastro-sucesso"></td></tr>
+    <tr><td class="id">CT04</td><td>Enviar com o nome vazio</td><td>Não cadastra; erro junto ao campo</td><td>Erro exibido e nenhum card novo</td><td class="st">✅ Passou</td><td class="ev"><img src="img/05-erro-validacao.png" alt="Print 05-erro-validacao"></td></tr>
+    <tr><td class="id">CT06</td><td>Informar preço zero</td><td>Rejeita com mensagem</td><td>"Informe um preço maior que zero."</td><td class="st">✅ Passou</td><td class="ev"><img src="img/05-erro-validacao.png" alt="Print 05-erro-validacao"></td></tr>
+    <tr><td class="id">CM01</td><td>Cadastrar escolhendo uma imagem do computador</td><td>Foto reduzida e salva</td><td>480×439 px; continua após recarregar</td><td class="st">✅ Passou</td><td class="ev"><img src="img/06-cadastro-sucesso.jpg" alt="Print 06-cadastro-sucesso"></td></tr>
+    <tr><td class="id">CT11</td><td>Editar o preço e salvar</td><td>Atualiza sem duplicar</td><td>4 cards; preço novo; "Produto atualizado!"</td><td class="st">✅ Passou</td><td class="ev"><img src="img/07-edicao%20de%20um%20produto.jpg" alt="Print 07-edicao"></td></tr>
+  </table>
+  
+</section>
+
+<section class="slide tabela">
+  <h2>Tabela de testes (2 de 2)</h2>
+  <table class="tt">
+    <tr><th>ID</th><th>Caso de teste</th><th>Esperado</th><th>Obtido</th><th>Status</th><th>Evidência</th></tr>
+    <tr><td class="id">CT16</td><td>Pesquisar "torta"</td><td>Filtra e atualiza o contador</td><td>1 card; "1 produto encontrado"</td><td class="st">✅ Passou</td><td class="ev"><img src="img/08-pesquisa.png" alt="Print 08-pesquisa"></td></tr>
+    <tr><td class="id">CT20</td><td>Recarregar a página</td><td>Dados mantidos</td><td>Produto cadastrado continua</td><td class="st">✅ Passou</td><td class="ev"><img src="img/06-cadastro-sucesso.jpg" alt="Print 06-cadastro-sucesso"></td></tr>
+    <tr><td class="id">CV01</td><td>Abrir em 1366 px (computador)</td><td>Seções completas e legíveis</td><td>Todas as seções e imagens inteiras</td><td class="st">✅ Passou</td><td class="ev"><img src="img/01-landing-desktop.jpg" alt="Print 01-landing-desktop"></td></tr>
+    <tr><td class="id">CV02</td><td>Abrir em 390 px (celular)</td><td>Uma coluna, sem rolagem lateral</td><td>Layout em uma coluna</td><td class="st">✅ Passou</td><td class="ev"><img src="img/02-landing-celular.jpg" alt="Print 02-landing-celular"></td></tr>
+    <tr><td class="id">CT25</td><td>Pedir orçamento pelo formulário</td><td>Abre o WhatsApp com a mensagem pronta</td><td>Link com nome, produto, data e detalhes</td><td class="st">✅ Passou</td><td class="ev"><img src="img/10-encomenda.jpg" alt="Print 10-encomenda"></td></tr>
+    <tr><td class="id">CT28</td><td>Imagens da página</td><td>Todas com texto alternativo (alt)</td><td>Nenhuma imagem sem alt</td><td class="st">✅ Passou</td><td class="ev"><img src="img/09-galeria%20de%20trabalhos.jpg" alt="Print 09-galeria"></td></tr>
+  </table>
+  <p class="nota">Tabela completa: 30 testes automatizados, 2 visuais e 5 em navegador real ou manuais (o CM04, abrir o WhatsApp, é verificado à mão). Detalhes em <code>docs/entrega/tabela-de-testes.md</code>.</p>
+</section>
+
+<section class="slide">
+  <h2>Limitações e próximos passos</h2>
+  <ul class="grande">
+    <li>Os dados ficam só no navegador de quem usa; não há login nem sincronização entre aparelhos.</li>
+    <li>Próximo passo: cadastro e listagem de <strong>clientes e encomendas</strong>.</li>
+    <li>Publicação (hospedagem) ainda não definida nesta etapa.</li>
+    <li>Textos, preços e contatos são de exemplo, para fins acadêmicos.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Equipe</h2>
+  <p class="grande">Grupo 37</p>
+  <ul class="grande">
+    <li>Camila Alves da Silva</li>
+    <li>Fabiana Balduína Freitas Silva · Tech Lead</li>
+    <li>Jonatas Sales dos Santos Vieira</li>
+    <li>Vitória Rodrigues</li>
+  </ul>
+  <p class="nota">Código: github.com/DevFaBGirl/projeto-integrador-senac-2</p>
+</section>
+
+<section class="slide capa acesso">
+  <p class="etq">Acesse e teste</p>
+  <h1>Minha Confeitaria Online</h1>
+  <p class="sub">Aplicação publicada para uso e avaliação</p>
+  <p class="link"><a href="https://projeto-integrador-senac-2.vercel.app/">https://projeto-integrador-senac-2.vercel.app/</a></p>
+  <p class="meta">Código-fonte: <a href="https://github.com/DevFaBGirl/projeto-integrador-senac-2">github.com/DevFaBGirl/projeto-integrador-senac-2</a><br>
+  Os produtos cadastrados ficam salvos no navegador de quem usa (localStorage).</p>
+</section>
+</body></html>

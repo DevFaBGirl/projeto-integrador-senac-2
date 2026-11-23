@@ -202,7 +202,7 @@ function renderizar() {
 
   contador.textContent = todos.length === 0 ? "" :
     filtrados.length + (filtrados.length === 1 ? " produto" : " produtos") +
-    (termo ? " encontrados" : "");
+    (termo ? (filtrados.length === 1 ? " encontrado" : " encontrados") : "");
 
   preencherSelectOrcamento(todos);
 }

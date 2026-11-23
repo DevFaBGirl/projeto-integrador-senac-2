@@ -69,7 +69,7 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 | T16 | CAT | Lógica do cadastro e da edição: `id` estável no lugar do índice, preço numérico, tolerar o formato antigo dos dados (C05, C10) | 12/11 | T06, T08, T15 | Fabiana | ✅ |
 | T17 | CAT | Estrutura do catálogo em cartões com estado vazio | — | — |  | ✅ |
 | T18 | CAT | Lógica da listagem: escapar HTML (C02), trocar `onclick` por delegação de eventos (C09), ordenar | 12/11 | T08, T17 | Fabiana | ✅ |
-| T19 | QA | Escrever os casos de teste para o catálogo (cadastrar, editar, excluir, validação, persistência, estado vazio) e para a landing page (seções, links, imagens, responsividade) | 12/11 | T06 |  | ⬜ |
+| T19 | QA | Escrever os casos de teste para o catálogo (cadastrar, editar, excluir, validação, persistência, estado vazio) e para a landing page (seções, links, imagens, responsividade) | 12/11 | T06 | Fabiana | ✅ |
 | T39 | GES | Corrigir os achados rápidos do código inicial: remover `[cite: 5]` (C01) e o XSS do `innerHTML` (C02) | 10/11 | — | Fabiana | ✅ |
 
 ### Fase 2 — Integração e polimento (13/11 a 15/11)
@@ -88,22 +88,22 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 
 | ID | Área | Tarefa | Prazo | Depende de | Responsável | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| T27 | QA | Executar os casos de teste e preencher a tabela (resultado obtido, status, evidência) | 17/11 | T19, T26 |  | ⬜ |
-| T28 | QA | Registrar bugs encontrados (passos para reproduzir, print) e repassar a quem desenvolveu | 17/11 | T27 |  | ⬜ |
-| T29 | GES | Corrigir bugs e fazer refatoração leve | 18/11 | T28 |  | ⬜ |
-| T30 | QA | Reteste dos bugs corrigidos e teste de regressão (os dados continuam ao recarregar a página) | 18/11 | T29 |  | ⬜ |
+| T27 | QA | Executar os casos de teste e preencher a tabela (resultado obtido, status, evidência) | 17/11 | T19, T26 | Fabiana | 🟨 |
+| T28 | QA | Registrar bugs encontrados (passos para reproduzir, print) e repassar a quem desenvolveu | 17/11 | T27 | Fabiana | ✅ |
+| T29 | GES | Corrigir bugs e fazer refatoração leve | 18/11 | T28 | Fabiana | ✅ |
+| T30 | QA | Reteste dos bugs corrigidos e teste de regressão (os dados continuam ao recarregar a página) | 18/11 | T29 | Fabiana | 🟨 |
 
 ### Fase 4 — Documentação e evidências (19/11 a 21/11)
 
 | ID | Área | Tarefa | Prazo | Depende de | Responsável | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| T31 | DOC | Tirar os prints (mínimo 6): landing page (desktop e mobile), formulário de produto, catálogo, erro de validação, edição, toast de sucesso | 19/11 | T30 |  | ⬜ |
-| T32 | DOC | Escrever a seção de **boas práticas aplicadas** (código, Git, dados, segurança, UX, responsividade, acessibilidade) | 19/11 | T26 |  | ⬜ |
-| T33 | DOC | Montar o PDF da apresentação | 20/11 | T31, T32, T27 |  | ⬜ |
-| T34 | DOC | Gravar o vídeo de demonstração de 1 a 2 min: cadastrar e editar um produto (opcional, sugerido) | 20/11 | T30 |  | ⬜ |
+| T31 | DOC | Tirar os prints (mínimo 6): landing page (desktop e mobile), formulário de produto, catálogo, erro de validação, edição, toast de sucesso | 19/11 | T30 | Fabiana | ✅ |
+| T32 | DOC | Escrever a seção de **boas práticas aplicadas** (código, Git, dados, segurança, UX, responsividade, acessibilidade) | 19/11 | T26 | Fabiana | ✅ |
+| T33 | DOC | Montar o PDF da apresentação | 20/11 | T31, T32, T27 | Fabiana | ✅ |
+| T34 | DOC | Gravar o vídeo de demonstração de 1 a 2 min: cadastrar e editar um produto (opcional, sugerido) | 20/11 | T30 | Fabiana | 🟨 |
 | T35 | GES | Escrever o `README.md` do repositório com instruções de uso | 20/11 | T26 | Fabiana | ✅ |
-| T36 | GES | Revisão geral (aplicação e documentos) e ajustes finais | 21/11 | T33 a T35 |  | ⬜ |
-| T37 | GES | Montar e conferir o pacote de entrega (PDF, prints, tabela de testes, vídeo ou link) | 22/11 | T36 |  | ⬜ |
+| T36 | GES | Revisão geral (aplicação e documentos) e ajustes finais | 21/11 | T33 a T35 | Fabiana | ✅ |
+| T37 | GES | Montar e conferir o pacote de entrega (PDF, prints, tabela de testes, vídeo ou link) | 22/11 | T36 | Fabiana | ✅ |
 | T38 | GES | **Entregar** | **23/11** | T37 |  | ⬜ |
 
 ### Opcionais — só se sobrar tempo
@@ -128,7 +128,6 @@ Cada pessoa lista aqui as tarefas que assumiu, pelo ID. Anote também a **reserv
 
 | Integrante | Papel | Tarefas que vou fazer (IDs) | Tarefas em que posso apoiar | Disponibilidade / observações |
 | --- | --- | --- | --- | --- |
-| Aram Juliano Soares Zap |  |  |  |  |
 | Camila Alves da Silva |  |  |  |  |
 | Fabiana Balduína Freitas Silva | Tech Lead |  |  |  |
 | Jonatas Sales dos Santos Vieira |  |  |  |  |
@@ -160,3 +159,7 @@ Cada tarefa concluída é anotada aqui com a data, o responsável e o commit que
 | 23/11/2026 | T09 a T16, T18, T20 a T22, O03 | Fabiana | Versão final do site, movida para a raiz do repositório: visual de moldura de navegador, seções Início, Sobre, Catálogo, Galeria, Encomenda e Contato, formulário de orçamento por WhatsApp, upload de imagem no cadastro e busca por nome. Esta versão substitui as anteriores (Sonho de Mel) | `70eeb61` |
 | 23/11/2026 | T35 | Fabiana | `README.md` reescrito para a estrutura final, com requisitos atendidos e boas práticas; `docs/` mantido | `70eeb61` |
 | 23/11/2026 | T12, T13 | Fabiana | Catálogo e galeria com as 4 ilustrações escolhidas (bolo de morango, brigadeiros, kit festa e torta), otimizadas para cerca de 100 KB; limpeza única dos produtos antigos sem imagem no `localStorage` | `70eeb61` |
+| 23/11/2026 | T19, T27 a T30 | Fabiana | Tabela de testes em `docs/entrega/tabela-de-testes.md`: 30 testes automatizados executados (30 aprovados), 2 visuais aprovados e 5 manuais a executar. 3 bugs registrados e corrigidos (B01 a B03) | a commitar |
+| 23/11/2026 | T32 a T34 | Fabiana | Gerador da apresentação (`docs/entrega/gerar-apresentacao.js`) e `apresentacao.pdf` com 14 slides, faltando os prints; roteiro do vídeo em `docs/entrega/roteiro-do-video.md`. Pasta de prints: `docs/entrega/img/` | a commitar |
+| 23/11/2026 | T27 a T31, T33 | Fabiana | Testes em navegador real (CM01, CM02, CM03 e CM05: 4 aprovados; CM04 depende do WhatsApp). Os 10 prints entraram na apresentação (`docs/entrega/img/`) e o PDF final foi gerado. Bug B04 (plural do contador da pesquisa) corrigido em `script.js` | a commitar |
+| 23/11/2026 | T33, T35 a T37 | Fabiana | Pacote de entrega fechado: tabela de testes com coluna de evidências (prints), PDF com a tabela de testes resumida e slide final com o link da aplicação (https://projeto-integrador-senac-2.vercel.app/), README com o link e a equipe. Participantes registrados: Camila Alves da Silva, Fabiana Balduína Freitas Silva (Tech Lead), Jonatas Sales dos Santos Vieira e Vitória Rodrigues | `commit final na main` |
