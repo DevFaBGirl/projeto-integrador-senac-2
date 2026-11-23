@@ -60,12 +60,12 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 | --- | --- | --- | --- | --- | --- | --- |
 | T08 | GES | Extrair utilitários: leitura/escrita seguras do `localStorage` com `try/catch` (C03), `escapeHtml`, `gerarId()` e `toast()` | 11/11 | T03 |  | ⬜ |
 | T09 | GES | Evoluir `style.css`: variáveis CSS, tipografia e identidade visual, mobile-first (o estilo base já existe) | 11/11 | T02 |  | 🟨 |
-| T10 | LP | Completar o HTML da landing page: menu, seções e rodapé, com marcação semântica (já há cabeçalho e catálogo) | 11/11 | T02, T05 |  | 🟨 |
-| T11 | LP | Seção **Apresentação da confeiteira**: descrição, proposta e diferenciais (já há título e uma frase) — RL01 | 11/11 | T10 |  | 🟨 |
+| T10 | LP | Completar o HTML da landing page: menu, seções e rodapé, com marcação semântica (já há cabeçalho e catálogo) | 11/11 | T02, T05 | Fabiana | ✅ |
+| T11 | LP | Seção **Apresentação da confeiteira**: descrição, proposta e diferenciais (já há título e uma frase) — RL01 | 11/11 | T10 | Fabiana | ✅ |
 | T12 | CAT | **Catálogo de produtos** com imagem (hoje mostra nome, descrição e preço) — RL02, C08 | 12/11 | T06, T15 |  | 🟨 |
-| T13 | LP | Seção **Galeria de trabalhos** — RL03 | 12/11 | T10 |  | ⬜ |
-| T14 | LP | Seção **Informações para encomenda** (prazo mínimo, tipos de produto, como pedir orçamento) e contato — RL04 | 12/11 | T10 |  | ⬜ |
-| T15 | CAT | Formulário de produto: acrescentar campo de imagem e `<label>` em todos os campos (C04, C08) | 11/11 | T02, T06 |  | 🟨 |
+| T13 | LP | Seção **Galeria de trabalhos** — RL03 | 12/11 | T10 | Fabiana | 🟨 |
+| T14 | LP | Seção **Informações para encomenda** (prazo mínimo, tipos de produto, como pedir orçamento) e contato — RL04 | 12/11 | T10 | Fabiana | ✅ |
+| T15 | CAT | Formulário de produto: acrescentar campo de imagem e `<label>` em todos os campos (C04, C08) | 11/11 | T02, T06 | Fabiana | 🟨 |
 | T16 | CAT | Lógica do cadastro e da edição: `id` estável no lugar do índice, preço numérico, tolerar o formato antigo dos dados (C05, C10) | 12/11 | T06, T08, T15 |  | 🟨 |
 | T17 | CAT | Estrutura do catálogo em cartões com estado vazio | — | — |  | ✅ |
 | T18 | CAT | Lógica da listagem: escapar HTML (C02), trocar `onclick` por delegação de eventos (C09), ordenar | 12/11 | T08, T17 |  | 🟨 |
@@ -76,7 +76,7 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 
 | ID | Área | Tarefa | Prazo | Depende de | Responsável | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| T20 | INT | Navegação interna (menu e âncoras entre as seções) e acesso ao gerenciamento conforme a decisão do T01 | 13/11 | T11 a T18 |  | ⬜ |
+| T20 | INT | Navegação interna (menu e âncoras entre as seções) e acesso ao gerenciamento conforme a decisão do T01 | 13/11 | T11 a T18 | Fabiana | 🟨 |
 | T21 | CAT | Validações completas: obrigatórios, `trim`, preço maior que zero, mensagens junto ao campo (C06) | 14/11 | T16 |  | ⬜ |
 | T22 | GES | Feedback visual: toast de sucesso/erro, estados vazios e confirmação de exclusão (esta já existe) | 14/11 | T08 |  | 🟨 |
 | T23 | LP | Responsividade da landing page (mobile, tablet, desktop) e otimização das imagens | 14/11 | T11 a T14 |  | ⬜ |
@@ -150,3 +150,6 @@ Cada tarefa concluída é anotada aqui com a data, o responsável e o commit que
 | Data | Tarefa | Responsável | O que foi feito | Evidência (commit) |
 | --- | --- | --- | --- | --- |
 | 23/11/2026 | T39 | Fabiana | Removido o texto `[cite: 5]` do subtítulo (C01) e corrigido o XSS do `innerHTML` com `textContent` (C02) | `1394808` (branch `fix/xss-catalogo`) |
+| 23/11/2026 | T10, T11, T14 | Fabiana | Landing page com menu, seções Sobre, Como encomendar e Contato, rodapé e marcação semântica (`main`, `nav`, `footer`). Textos e contatos são de exemplo | branch `feat/landing-page` |
+| 23/11/2026 | T13 | Fabiana | Seção Galeria criada com espaços ilustrados; faltam as fotos reais em `site/img/` | branch `feat/landing-page` |
+| 23/11/2026 | T15, T20 | Fabiana | `<label>` em todos os campos do formulário (C04) e navegação por âncoras no menu; falta o campo de imagem | branch `feat/landing-page` |

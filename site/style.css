@@ -92,3 +92,99 @@ form button:hover {
 
 .btn-editar { background-color: #f0ad4e; color: white; }
 .btn-excluir { background-color: #d9534f; color: white; }
+
+/* Navegação */
+html { scroll-behavior: smooth; }
+
+header nav ul {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+}
+
+header nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+}
+
+header nav a:hover { border-bottom-color: white; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #8c4a50;
+    outline-offset: 2px;
+}
+
+section { scroll-margin-top: 10px; }
+section h2 { color: #8c4a50; margin-top: 0; }
+
+/* Apresentação */
+.diferenciais,
+.contato { padding-left: 1.2rem; line-height: 1.6; }
+
+/* Galeria */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+.grid-galeria figure { margin: 0; }
+
+.grid-galeria .foto {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    background: #fff8f6;
+    border: 1px solid #f2d6d0;
+    border-radius: 6px;
+}
+
+.grid-galeria img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.grid-galeria figcaption {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 0.9rem;
+}
+
+/* Formulário com labels */
+form label {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+form label input { font-weight: normal; }
+
+.aviso { color: #8c4a50; font-size: 0.9rem; }
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #6b5b5b;
+}
+
+@media (max-width: 480px) {
+    header { padding: 1.5rem 1rem; }
+    section { margin: 12px; padding: 16px; }
+}
