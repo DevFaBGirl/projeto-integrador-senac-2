@@ -59,7 +59,7 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 | ID | Área | Tarefa | Prazo | Depende de | Responsável | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | T08 | GES | Extrair utilitários: leitura/escrita seguras do `localStorage` com `try/catch` (C03), `escapeHtml`, `gerarId()` e `toast()` | 11/11 | T03 | Fabiana | ✅ |
-| T09 | GES | Evoluir `style.css`: variáveis CSS, tipografia e identidade visual, mobile-first (o estilo base já existe) | 11/11 | T02 |  | 🟨 |
+| T09 | GES | Evoluir `style.css`: variáveis CSS, tipografia e identidade visual, mobile-first (o estilo base já existe) | 11/11 | T02 | Fabiana | ✅ |
 | T10 | LP | Completar o HTML da landing page: menu, seções e rodapé, com marcação semântica (já há cabeçalho e catálogo) | 11/11 | T02, T05 | Fabiana | ✅ |
 | T11 | LP | Seção **Apresentação da confeiteira**: descrição, proposta e diferenciais (já há título e uma frase) — RL01 | 11/11 | T10 | Fabiana | ✅ |
 | T12 | CAT | **Catálogo de produtos** com imagem (hoje mostra nome, descrição e preço) — RL02, C08 | 12/11 | T06, T15 | Fabiana | ✅ |
@@ -76,7 +76,7 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 
 | ID | Área | Tarefa | Prazo | Depende de | Responsável | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| T20 | INT | Navegação interna (menu e âncoras entre as seções) e acesso ao gerenciamento conforme a decisão do T01 | 13/11 | T11 a T18 | Fabiana | 🟨 |
+| T20 | INT | Navegação interna (menu e âncoras entre as seções) e acesso ao gerenciamento conforme a decisão do T01 | 13/11 | T11 a T18 | Fabiana | ✅ |
 | T21 | CAT | Validações completas: obrigatórios, `trim`, preço maior que zero, mensagens junto ao campo (C06) | 14/11 | T16 | Fabiana | ✅ |
 | T22 | GES | Feedback visual: toast de sucesso/erro, estados vazios e confirmação de exclusão (esta já existe) | 14/11 | T08 | Fabiana | ✅ |
 | T23 | LP | Responsividade da landing page (mobile, tablet, desktop) e otimização das imagens | 14/11 | T11 a T14 |  | ⬜ |
@@ -114,7 +114,7 @@ Se não forem feitas, entram no PDF como "funcionalidades futuras".
 | --- | --- | --- | --- | --- | --- | --- |
 | O01 | CAT | Editar produto | — | — |  | ✅ |
 | O02 | CAT | Excluir produto (com confirmação) | — | — |  | ✅ |
-| O03 | CAT | Pesquisar/filtrar produtos por nome | 18/11 | T18 |  | ⬜ |
+| O03 | CAT | Pesquisar/filtrar produtos por nome | 18/11 | T18 | Fabiana | ✅ |
 | O04 | CAT | Cadastro e listagem de clientes/encomendas (RX01, funcionalidade futura da DEC4) | — | T01 |  | ⬜ |
 
 ---
@@ -157,3 +157,6 @@ Cada tarefa concluída é anotada aqui com a data, o responsável e o commit que
 | 23/11/2026 | T08, T16, T18, T21, T22 | Fabiana | `script.js` reescrito: `try/catch` no `localStorage`, `id` estável, preço numérico, listagem sem `innerHTML` e com delegação de eventos, validação com `trim` e mensagens junto ao campo, toast de sucesso/erro | idem |
 | 23/11/2026 | T35 | Fabiana | `README.md` criado, com requisitos atendidos, nota sobre a galeria e boas práticas | idem |
 | 23/11/2026 | T12, T13 | Fabiana | Catálogo e galeria unidos em uma única seção ("Catálogo e Galeria de Produtos"), que cumpre RL02 e RL03; removida a galeria separada | commit desta etapa na branch `feat/landing-page` |
+| 23/11/2026 | T09 a T16, T18, T20 a T22, O03 | Fabiana | Versão final do site, movida para a raiz do repositório: visual de moldura de navegador, seções Início, Sobre, Catálogo, Galeria, Encomenda e Contato, formulário de orçamento por WhatsApp, upload de imagem no cadastro e busca por nome. Esta versão substitui as anteriores (Sonho de Mel) | versão final na `main` |
+| 23/11/2026 | T35 | Fabiana | `README.md` reescrito para a estrutura final, com requisitos atendidos e boas práticas; `docs/` mantido | versão final na `main` |
+| 23/11/2026 | T12, T13 | Fabiana | Catálogo e galeria com as 4 ilustrações escolhidas (bolo de morango, brigadeiros, kit festa e torta), otimizadas para cerca de 100 KB; limpeza única dos produtos antigos sem imagem no `localStorage` | versão final na `main` |

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha Confeitaria Online</title>
+  <meta name="description" content="Bolos, doces e kits para festas feitos por encomenda. Veja o catálogo, a galeria de trabalhos e peça seu orçamento.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Moldura de navegador (igual à apresentação): abas = menu ===== -->
+  <header class="browser" id="topo">
+    <div class="tabs" role="presentation">
+      <span class="tabs__dot" id="tabDot" aria-hidden="true"></span>
+      <nav class="tabs__list" aria-label="Seções da página">
+        <a class="tab" href="#inicio">Início</a>
+        <a class="tab" href="#sobre">Sobre</a>
+        <a class="tab" href="#catalogo">Catálogo</a>
+        <a class="tab" href="#galeria">Galeria</a>
+        <a class="tab" href="#encomenda">Encomenda</a>
+        <a class="tab" href="#contato">Contato</a>
+      </nav>
+    </div>
+    <div class="urlbar" aria-hidden="true">
+      <span class="urlbar__btns">&larr; &rarr; &#x21bb;</span>
+      <span class="urlbar__field">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        Minha Confeitaria Online
+      </span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== 1. INÍCIO ===== -->
+    <section id="inicio" class="section hero">
+      <div class="container hero__grid">
+        <div>
+          <p class="eyebrow">Doces feitos por encomenda</p>
+          <h1>Minha Confeitaria Online</h1>
+          <p class="pill-outline">Bolos, doces e kits para festas</p>
+          <p class="lead">Produtos artesanais, personalizados para o seu momento. Conheça o catálogo, veja os trabalhos já feitos e peça seu orçamento pelo WhatsApp.</p>
+          <div class="actions">
+            <a class="btn btn--dark" href="#catalogo">Ver catálogo</a>
+            <a class="btn btn--ghost" href="#encomenda">Pedir orçamento</a>
+          </div>
+        </div>
+        <img class="hero__img" src="img/bolo.webp" alt="Ilustração de um bolo com cobertura de chantilly e calda de morango" width="900" height="821">
+      </div>
+    </section>
+
+    <!-- ===== 2. SOBRE (Requisito 1 - Apresentação da confeiteira) ===== -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <div class="title-row">
+          <img class="title-row__img title-row__img--tall" src="img/baker.webp" alt="Ilustração de uma confeiteira abrindo massa com um rolo" width="600" height="838">
+          <div>
+            <h2>Sobre a confeiteira</h2>
+            <p class="subtitle">Ana Souza &middot; Confeitaria artesanal</p>
+            <p class="text">Sou confeiteira autônoma e trabalho por encomenda. Cada bolo, doce ou kit de festa é feito do zero, com ingredientes de qualidade e do jeito que você imaginou. Minha proposta é simples: transformar a sua ideia em um doce bonito e saboroso, com atendimento próximo e prazos combinados.</p>
+          </div>
+        </div>
+
+        <div class="trio">
+          <article class="card-pill">
+            <span class="bookmark" aria-hidden="true"></span>
+            <h3 class="pill">Feito à mão</h3>
+            <p>Receitas próprias, preparadas em pequenos lotes e sempre com ingredientes frescos.</p>
+          </article>
+          <article class="card-pill">
+            <span class="bookmark" aria-hidden="true"></span>
+            <h3 class="pill">Personalizado</h3>
+            <p>Sabores, cores e tema escolhidos por você, para aniversários, casamentos e eventos.</p>
+          </article>
+          <article class="card-pill">
+            <span class="bookmark" aria-hidden="true"></span>
+            <h3 class="pill">Atendimento direto</h3>
+            <p>Você conversa diretamente comigo, tira dúvidas e acompanha o pedido do início ao fim.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. CATÁLOGO (Requisito 2) + cadastro/listagem/edição/exclusão/pesquisa ===== -->
+    <section id="catalogo" class="section">
+      <div class="container">
+        <div class="title-row">
+          <img class="title-row__img" src="img/utensilios.webp" alt="Ilustração de uma tigela com utensílios de confeitaria" width="444" height="450">
+          <h2>Catálogo de produtos</h2>
+        </div>
+
+        <div class="toolbar">
+          <label class="visually-hidden" for="busca">Pesquisar produto pelo nome</label>
+          <input id="busca" class="input input--search" type="search" placeholder="Pesquisar produto pelo nome…" autocomplete="off">
+          <p class="count" id="contador" aria-live="polite"></p>
+        </div>
+
+        <div id="catalogo-lista" class="grid"></div>
+        <p id="estado-vazio" class="empty" hidden></p>
+
+        <!-- Formulário de cadastro/edição -->
+        <div class="manage" id="cadastro">
+          <h3 class="manage__title">Área da confeiteira <span class="tag">demonstração</span></h3>
+          <p class="manage__hint">Cadastre, edite ou exclua produtos. Os dados ficam salvos neste navegador (localStorage), sem login nem banco de dados.</p>
+
+          <form id="form-produto" novalidate>
+            <input type="hidden" id="produto-id">
+
+            <div class="field">
+              <label for="nome">Nome do produto *</label>
+              <input id="nome" class="input" type="text" maxlength="60" autocomplete="off">
+              <small class="error" id="erro-nome" role="alert"></small>
+            </div>
+
+            <div class="field">
+              <label for="preco">Preço inicial (R$) *</label>
+              <input id="preco" class="input" type="number" min="0.01" step="0.01" inputmode="decimal">
+              <small class="error" id="erro-preco" role="alert"></small>
+            </div>
+
+            <div class="field field--full">
+              <label for="descricao">Descrição *</label>
+              <textarea id="descricao" class="input" rows="3" maxlength="200"></textarea>
+              <small class="error" id="erro-descricao" role="alert"></small>
+            </div>
+
+            <div class="field field--full">
+              <label for="imagem">Imagem (opcional)</label>
+              <input id="imagem" class="input" type="file" accept="image/*">
+              <small class="hint" id="dica-imagem">Sem imagem, o produto usa uma ilustração padrão.</small>
+            </div>
+
+            <div class="actions field--full">
+              <button class="btn btn--dark" type="submit" id="btn-salvar">Cadastrar produto</button>
+              <button class="btn btn--ghost" type="button" id="btn-cancelar" hidden>Cancelar edição</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. GALERIA (Requisito 3) ===== -->
+    <section id="galeria" class="section">
+      <div class="container">
+        <div class="title-row">
+          <h2>Galeria de trabalhos</h2>
+        </div>
+        <p class="text text--narrow">Alguns dos trabalhos já feitos, para você ver a qualidade e a variedade do que posso preparar.</p>
+
+        <!-- Troque as imagens abaixo pelas fotos reais (mantenha o atributo alt descritivo) -->
+        <div class="gallery">
+          <figure><img src="img/bolo-morango.jpg" alt="Bolo recheado com morangos e chantilly sobre um prato lilás" loading="lazy"><figcaption>Bolo de morango com chantilly</figcaption></figure>
+          <figure><img src="img/brigadeiros.jpg" alt="Caixa lilás com laço laranja cheia de brigadeiros variados" loading="lazy"><figcaption>Caixa de brigadeiros gourmet</figcaption></figure>
+          <figure><img src="img/kit-festa.jpg" alt="Mesa de festa com bolo colorido, cupcakes e docinhos" loading="lazy"><figcaption>Kit festa personalizado</figcaption></figure>
+          <figure><img src="img/torta-doce.jpg" alt="Torta de cereja com massa em treliça e flores de açúcar" loading="lazy"><figcaption>Torta doce de cereja</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. ENCOMENDA (Requisito 4) ===== -->
+    <section id="encomenda" class="section">
+      <div class="container">
+        <div class="title-row">
+          <h2>Como encomendar</h2>
+        </div>
+
+        <div class="duo">
+          <article>
+            <h3 class="num"><span>1.</span>Prazo mínimo</h3>
+            <p class="text">Bolos e doces personalizados: <strong>5 dias de antecedência</strong>. Kits para festas e pedidos grandes: <strong>10 dias</strong>. Pedidos de última hora, consulte a disponibilidade.</p>
+          </article>
+          <article>
+            <h3 class="num"><span>2.</span>Produtos disponíveis</h3>
+            <p class="text">Bolos decorados, bolos de pote, docinhos para festa, cupcakes, tortas e kits personalizados. Veja os valores iniciais no catálogo.</p>
+          </article>
+          <article>
+            <h3 class="num"><span>3.</span>Como pedir o orçamento</h3>
+            <p class="text">Informe o produto, a quantidade, a data do evento e o tema. Eu respondo com o valor final e as formas de pagamento.</p>
+          </article>
+          <article>
+            <h3 class="num"><span>4.</span>Entrega e pagamento</h3>
+            <p class="text">Retirada combinada ou entrega mediante taxa. O pedido é confirmado com 50% de sinal; o restante é pago na entrega.</p>
+          </article>
+        </div>
+
+        <!-- Formulário que abre o WhatsApp com a mensagem pronta -->
+        <form id="form-orcamento" class="manage" novalidate>
+          <h3 class="manage__title">Peça seu orçamento</h3>
+          <p class="manage__hint">Preencha os dados e abra a conversa no WhatsApp com a mensagem pronta.</p>
+
+          <div class="field">
+            <label for="o-nome">Seu nome *</label>
+            <input id="o-nome" class="input" type="text" maxlength="60" autocomplete="name">
+            <small class="error" id="erro-o-nome" role="alert"></small>
+          </div>
+          <div class="field">
+            <label for="o-data">Data do evento</label>
+            <input id="o-data" class="input" type="date">
+          </div>
+          <div class="field field--full">
+            <label for="o-produto">Produto de interesse</label>
+            <select id="o-produto" class="input"></select>
+          </div>
+          <div class="field field--full">
+            <label for="o-msg">Detalhes do pedido</label>
+            <textarea id="o-msg" class="input" rows="3" maxlength="300" placeholder="Quantidade, sabor, tema, número de convidados…"></textarea>
+          </div>
+          <div class="actions field--full">
+            <button class="btn btn--dark" type="submit">Enviar pelo WhatsApp</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 6. CONTATO ===== -->
+  <footer id="contato" class="footer">
+    <div class="container footer__grid">
+      <div>
+        <h2 class="footer__title">Contato</h2>
+        <ul class="contact">
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">(11) 99999-9999</a></li>
+          <li><strong>Instagram:</strong> <a href="https://www.instagram.com/" target="_blank" rel="noopener">@minhaconfeitariaonline</a></li>
+          <li><strong>Atendimento:</strong> seg. a sáb., das 9h às 18h</li>
+          <li><strong>Local:</strong> São Paulo, SP (retirada com hora marcada)</li>
+        </ul>
+      </div>
+      <p class="footer__note">Projeto Integrador &middot; Grupo 37<br>SENAC &middot; 2026</p>
+    </div>
+  </footer>
+
+  <!-- Aviso de sucesso/erro -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

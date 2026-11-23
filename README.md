@@ -1,13 +1,13 @@
-# Sonho de Mel — Confeitaria Online
+# Minha Confeitaria Online — Grupo 37
 
 Landing page de divulgação com catálogo de produtos gerenciável para confeiteiras/os autônomas/os.
-Projeto Integrador SENAC, 2ª etapa (Grupo 37): *Desenvolvimento da Aplicação Web utilizando Boas Práticas de Desenvolvimento de Software*.
+Projeto Integrador SENAC, 2ª etapa: *Desenvolvimento da Aplicação Web utilizando Boas Práticas de Desenvolvimento de Software*.
 
 A aplicação é 100% client-side (HTML, CSS e JavaScript), sem backend e sem banco de dados externo. Os produtos ficam no `localStorage` do navegador.
 
 ## Como executar
 
-Abra `site/index.html` no navegador, ou, para usar um servidor local, rode dentro da pasta `site`:
+Dê dois cliques em `index.html` (não precisa de servidor). Se preferir um servidor local, rode na pasta do projeto:
 
 ```
 python -m http.server 8000
@@ -15,17 +15,16 @@ python -m http.server 8000
 
 e acesse `http://localhost:8000`.
 
-Na primeira abertura, o catálogo vem com 8 produtos de exemplo. Para voltar a esse estado, limpe os dados do site no navegador (`localStorage`).
+Na primeira visita, o catálogo vem com 4 produtos de exemplo. Para voltar a esse estado, limpe os dados do site no navegador (`localStorage`).
 
 ## Estrutura
 
 ```
-site/
-├── index.html   # Landing page + formulário e catálogo/galeria de produtos
-├── style.css    # Estilos (responsivo: 4, 2 ou 1 colunas)
-├── script.js    # CRUD do catálogo em localStorage
-└── img/         # Imagens dos produtos
-docs/            # Requisitos, planejamento, cronograma e registro de andamento
+index.html   # Landing page, catálogo, formulário de produto e de orçamento
+style.css    # Estilos (visual de "moldura de navegador" com abas como menu)
+script.js    # CRUD do catálogo, busca, orçamento por WhatsApp e abas
+img/         # Ilustrações da página
+docs/        # Requisitos, planejamento, cronograma, registro de andamento e fontes
 ```
 
 ## Requisitos atendidos
@@ -35,12 +34,10 @@ docs/            # Requisitos, planejamento, cronograma e registro de andamento
 | ID | Requisito | Onde está |
 | --- | --- | --- |
 | RL01 | Apresentação da confeiteira (nome, descrição, proposta e diferenciais) | Seção **Sobre** |
-| RL02 | Catálogo com nome, descrição, imagem e preço | Seção **Catálogo e Galeria de Produtos** |
-| RL03 | Galeria de trabalhos | Mesma seção (veja a nota abaixo) |
-| RL04 | Informações para encomenda (prazo, tipos de produto, como pedir) | Seção **Como Encomendar** |
-| RL05 | Página responsiva que facilita o contato | Seção **Contato**, botão de WhatsApp e layout responsivo |
-
-> **Sobre a galeria (RL03):** o requisito pede imagens de trabalhos realizados. Para uma confeitaria, os trabalhos realizados são os próprios produtos prontos. Por isso o catálogo e a galeria foram unidos em uma seção só: cada card mostra a foto do produto pronto junto com nome, descrição e preço. Assim a página fica mais limpa, sem repetir as mesmas imagens em duas seções.
+| RL02 | Catálogo com nome, descrição, imagem e preço | Seção **Catálogo** |
+| RL03 | Galeria de trabalhos | Seção **Galeria** |
+| RL04 | Informações para encomenda (prazo, produtos, como pedir orçamento) | Seção **Encomenda**, com formulário que abre o WhatsApp |
+| RL05 | Página responsiva que facilita o contato | Seção **Contato**, orçamento por WhatsApp e layout responsivo |
 
 ### Gerenciamento do catálogo
 
@@ -53,20 +50,24 @@ docs/            # Requisitos, planejamento, cronograma e registro de andamento
 | RF05 | Feedback visual (mensagens de sucesso/erro) e confirmação de exclusão | Feito |
 | RO01 | Editar produto | Feito |
 | RO02 | Excluir produto | Feito |
-| RO03 | Pesquisar/filtrar produtos | Não implementado (opcional) |
+| RO03 | Pesquisar produtos por nome (sem acento e sem diferenciar maiúsculas) | Feito |
 
 ## Boas práticas aplicadas
 
-- **Segurança:** textos digitados são inseridos com `textContent` (nunca `innerHTML`), evitando XSS. As imagens aceitas vêm de uma lista fechada.
-- **Dados:** leitura e escrita do `localStorage` com `try/catch`; cada produto tem `id` próprio; dados no formato antigo são normalizados.
+- **Segurança:** textos digitados são inseridos com `textContent` (nunca `innerHTML`), evitando XSS.
+- **Dados:** leitura e escrita do `localStorage` com `try/catch`; cada produto tem `id` próprio; dados inválidos ou corrompidos não quebram a página. A imagem enviada é reduzida (480 px, JPEG) antes de salvar, para respeitar o limite do armazenamento.
 - **Separação de responsabilidades:** HTML (estrutura), CSS (apresentação) e JS (comportamento), com delegação de eventos em vez de `onclick` no HTML.
-- **Acessibilidade:** `<label>` em todos os campos, mensagens de erro associadas aos campos, foco visível, `alt` nas imagens e navegação por teclado.
-- **Responsividade:** grades de 4, 2 e 1 colunas conforme a largura da tela.
-- **Git:** branches por tipo de mudança (`fix/*`, `feat/*`) e commits semânticos em português.
+- **Acessibilidade:** `<label>` em todos os campos, mensagens de erro associadas aos campos (`role="alert"`), foco visível, `alt` nas imagens, avisos com `aria-live` e respeito a `prefers-reduced-motion`.
+- **Responsividade:** layout adaptado para celular, tablet e desktop.
+- **Versionamento:** Git/GitHub, com branches por tipo de mudança (`fix/*`, `feat/*`) e commits semânticos em português.
 
-## Dados fictícios
+## Dados fictícios e imagens
 
-O nome da confeitaria, os textos, os preços, o telefone, o e-mail e o endereço são de exemplo, criados para fins acadêmicos. As imagens com a legenda "foto em breve" são provisórias.
+O nome da confeiteira, os textos, os preços, o WhatsApp, o Instagram e o endereço são de exemplo, criados para fins acadêmicos. Para personalizar:
+
+- **Textos:** `index.html` (seções Sobre, Encomenda e Contato).
+- **WhatsApp:** constante `WHATSAPP` no topo de `script.js`.
+- **Imagens:** substitua os arquivos de `img/`, mantendo o mesmo nome.
 
 ## Documentação
 
