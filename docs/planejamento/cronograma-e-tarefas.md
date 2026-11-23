@@ -70,7 +70,7 @@ Legenda de área: **GES** gestão · **LP** landing page · **CAT** catálogo e 
 | T17 | CAT | Estrutura do catálogo em cartões com estado vazio | — | — |  | ✅ |
 | T18 | CAT | Lógica da listagem: escapar HTML (C02), trocar `onclick` por delegação de eventos (C09), ordenar | 12/11 | T08, T17 |  | 🟨 |
 | T19 | QA | Escrever os casos de teste para o catálogo (cadastrar, editar, excluir, validação, persistência, estado vazio) e para a landing page (seções, links, imagens, responsividade) | 12/11 | T06 |  | ⬜ |
-| T39 | GES | Corrigir os achados rápidos do código inicial: remover `[cite: 5]` (C01) e o XSS do `innerHTML` (C02) | 10/11 | — |  | ⬜ |
+| T39 | GES | Corrigir os achados rápidos do código inicial: remover `[cite: 5]` (C01) e o XSS do `innerHTML` (C02) | 10/11 | — | Fabiana | ✅ |
 
 ### Fase 2 — Integração e polimento (13/11 a 15/11)
 
@@ -140,3 +140,13 @@ Cada pessoa lista aqui as tarefas que assumiu, pelo ID. Anote também a **reserv
 - [ ] Todo integrante tem pelo menos uma tarefa em cada fase em que houver trabalho para o seu perfil.
 - [ ] As tarefas de QA e Documentação (T07, T19, T27–T28, T30–T34) têm dono, inclusive para quem não programa.
 - [ ] Nenhuma pessoa concentra todas as tarefas de uma mesma fase com prazo no mesmo dia.
+
+---
+
+## 4. Registro de andamento
+
+Cada tarefa concluída é anotada aqui com a data, o responsável e o commit que serve de evidência. A tabela da seção 2 mantém só o Status e o Responsável.
+
+| Data | Tarefa | Responsável | O que foi feito | Evidência (commit) |
+| --- | --- | --- | --- | --- |
+| 23/11/2026 | T39 | Fabiana | Removido o texto `[cite: 5]` do subtítulo (C01) e corrigido o XSS do `innerHTML` com `textContent` (C02) | `1394808` (branch `fix/xss-catalogo`) |
